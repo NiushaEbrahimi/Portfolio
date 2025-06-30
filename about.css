@@ -2,36 +2,106 @@
     position: relative;
     width: 150px;
     height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
-.circle-bg,
-.circle-progress {
-    fill: none;
-    stroke-width: 15;
+.circle{
+    width: 70%;
+    height: 70%;
+    position: relative;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.726);
 }
-
-.circle-bg {
-    stroke: #eee;
-}
-
-.circle-progress {
-    stroke: rgb(58, 31, 102);
-    stroke-linecap: round;
-    transition: stroke-dashoffset 0.5s ease;
-}
-.percentage {
+.circle::before{
+    --agnle-circle:0deg;
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 24px;
-    font-family: sans-serif;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    z-index: -1;
 }
-.container {
-    transform: rotate(-90deg);
+.circle-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle-icon > img{
+    width: 70%;
+    height: 70%;
+    
+}
+@property --percentage{
+    syntax: "<number>";
+    initial-value:0 ;
+    inherits: true;
 }
 
+.circle-1 , .circle-2{
+    animation: progress-1-2 2s linear forwards;
+}
+.circle-1::before , .circle-2::before{
+    background: conic-gradient(#260f39 calc(var(--percentage)*1%),#9467fd 0) ;
+}
+@keyframes progress-1-2{
+    from{--percentage:0;}
+    to{--percentage:85;}
+}
 
+.circle-3{
+    animation: progress-3 2s linear forwards;
+}
+.circle-3::before{
+    background: conic-gradient(#260f39 calc(var(--percentage)*1%),#9467fd 0) ;
+}
+@keyframes progress-3{
+    from{--percentage:0;}
+    to{--percentage:60;}
+}
+
+.circle-4{
+    animation: progress-4 2s linear forwards;
+}
+.circle-4::before{
+    background: conic-gradient(#260f39 calc(var(--percentage)*1%),#9467fd 0) ;
+}
+@keyframes progress-4{
+    from{--percentage:0;}
+    to{--percentage:85;}
+}
+
+.circle-5{
+    animation: progress-5 2s linear forwards;
+}
+.circle-5::before{
+    background: conic-gradient(#260f39 calc(var(--percentage)*1%),#9467fd 0) ;
+}
+@keyframes progress-5{
+    from{--percentage:0;}
+    to{--percentage:50;}
+}
+
+.circle-6{
+    animation: progress-6 2s linear forwards;
+}
+.circle-6::before{
+    background: conic-gradient(#260f39 calc(var(--percentage)*1%),#9467fd 0) ;
+}
+@keyframes progress-6{
+    from{--percentage:0;}
+    to{--percentage:20;}
+}
 
 .tools{
     display: grid;
@@ -39,7 +109,7 @@
     align-items: center;
     grid-template-rows: 1fr 5fr ;
     height:80dvh;
-    background-color: rgb(148, 103, 253);
+    background-color: #9467fd;
 }
 .title{
     
@@ -58,4 +128,74 @@
 }
 .welcome-text-subtitle{
     font-size: 1.2rem;
+}
+
+
+.cards{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 10vw ;
+    padding-right: 10vw;
+    margin-top: 30vh;
+    column-gap: 10vw;
+}
+.card{
+    padding: 10vh;
+    text-align: center;
+    line-height: 2rem;
+    background-color: rgb(34, 34, 34);
+    color: white;
+    border-radius: 2vh;
+    height: 35vh;   
+    position: relative;
+    
+}
+.card::after , .card::before{
+    --angle:90deg;
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    padding: 5px;
+    background-image: conic-gradient(from var(--angle),transparent 70%,#9467fd);
+    z-index: -1;
+    border-radius: 2vh;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 3s linear infinite;
+    
+}
+.card::before{
+    opacity: 0.5;
+    filter: blur(10px)
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value:90deg ;
+    inherits: false;
+}
+@keyframes rotate {
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+}
+
+
+
+.fade-In {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+  
+.fade-In.show {
+    opacity: 1;
+    transform: translateY(0);
 }

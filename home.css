@@ -19,6 +19,7 @@ body{
     align-items: center;
     font-family: "Poppins", system-ui;
     background-color: rgb(38, 13, 53);
+    z-index: 1000;
 }
 .scrolled{
     width: 100%;
@@ -29,6 +30,7 @@ body{
     align-items: center;
     font-family: "Poppins", system-ui;
     background-color: rgba(38, 13, 53, 0.466);
+    z-index: 1000;
 }
 nav{
     padding-left: 3dvw;
@@ -43,6 +45,7 @@ ul{
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     list-style-type: none;
+    column-gap: normal;
     margin: 0px;
 }
 a{
@@ -60,6 +63,7 @@ a:hover{
     background-color : white;
     color: black;
 }
+
 a svg {
     width: 24px;
     height: 24px;
@@ -76,6 +80,16 @@ a svg {
     column-gap: 10dvw;
     color: white;
 }
+.image-container{
+    transition-duration: 1000ms;
+}
+.image-container:hover{
+    transform: rotateY(180deg);   
+    background-image: white;
+    cursor: pointer;
+    
+}
+
 .about-me{
     height: 120dvh;
 }
@@ -112,6 +126,17 @@ a svg {
     unicode-bidi: plaintext;
 }
 
+.fade-In {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+  
+.fade-In.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
 footer{
     height: 30dvh;
     width: 100%;
@@ -137,13 +162,14 @@ footer{
     border-radius: 2dvh;
     transition-duration: 200ms;
     background-color: white;
+    cursor: pointer;
 }
 .btn:hover{
     transform: scale(1.1);
     background-color: white;
 }
 .gradient-text{
-    background: linear-gradient(to right, rgb(108, 66, 133), #2d3894);
+    background: linear-gradient(to right, #6c4285, #2d3894);
     -webkit-background-clip: text;
             background-clip: text;
     -webkit-text-fill-color: transparent;

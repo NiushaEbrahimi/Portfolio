@@ -43,7 +43,7 @@
         </nav>
     </header>
     <main>
-        <section class="first-section about-me">
+        <section class="first-section about-me fade-In">
             <div class="picture">
                 <img src="./446ac60d-cb93-453d-8823-87e0db689f4c.png" alt ="picture of me coding ">
             </div>
@@ -56,68 +56,94 @@
             </div>
         </section>
 
-        <section class="tools">
+        <section class="tools fade-In">
             <div class="title">
                 <h2>مهارت های مورد استفاده</h2>
             </div>
             <div class="items">
-                <div class="python item">
-                    <div class="container">
-                        <svg width="150" height="150">
-                          <circle class="circle-bg" cx="75" cy="75" r="60"/>
-                          <circle class="circle-progress" cx="75" cy="75" r="60"/>
-                        </svg>
-                        <div class="percentage" id="percentage">0%</div>
-                    </div>
-                </div>
                 <div class="html item">
                     <div class="container">
-                        <svg width="150" height="150">
-                          <circle class="circle-bg" cx="75" cy="75" r="60"/>
-                          <circle class="circle-progress" cx="75" cy="75" r="60"/>
-                        </svg>
-                        <div class="percentage" id="percentage">0%</div>
+                        <div class="circle circle-1">
+                            <div class="circle-icon">
+                                <img src="./sources/icons8-html-96.png" alt="html icon">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="css item">
                     <div class="container">
-                        <svg class="svg-circle" width="150" height="150">
-                          <circle class="circle-bg" cx="75" cy="75" r="60"/>
-                          <circle class="circle-progress" cx="75" cy="75" r="60"/>
-                        </svg>
-                        <div class="percentage" id="percentage">0%</div>
+                        <div class="circle circle-2">
+                            <div class="circle-icon">
+                                <img src="./sources/icons8-css-96.png" alt="css icon">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="javascript item">
                     <div class="container">
-                        <svg width="150" height="150">
-                          <circle class="circle-bg" cx="75" cy="75" r="60"/>
-                          <circle class="circle-progress" cx="75" cy="75" r="60"/>
-                        </svg>
-                        <div class="percentage" id="percentage">0%</div>
+                        <div class="circle circle-3">
+                            <div class="circle-icon">
+                                <img src="./sources/icons8-javascript-96.png" alt="javascript icon">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="linux item">
+                <div class="python item">
                     <div class="container">
-                        <svg width="150" height="150">
-                          <circle class="circle-bg" cx="75" cy="75" r="60"/>
-                          <circle class="circle-progress" cx="75" cy="75" r="60"/>
-                        </svg>
-                        <div class="percentage" id="percentage">0%</div>
+                        <div class="circle circle-4">
+                            <div class="circle-icon">
+                                <img src="./sources/icons8-python-96.png" alt="python icon">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="git item">
                     <div class="container">
-                        <svg width="150" height="150">
-                          <circle class="circle-bg" cx="75" cy="75" r="60"/>
-                          <circle class="circle-progress" cx="75" cy="75" r="60"/>
-                        </svg>
-                        <div class="percentage" id="percentage">0%</div>
+                        <div class="circle circle-5">
+                            <div class="circle-icon">
+                                <img src="./sources/icons8-git-96.png" alt="git icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="linux item">
+                    <div class="container">
+                        <div class="circle circle-6">
+                            <div class="circle-icon">
+                                <img src="./sources/icons8-linux-96.png" alt="linux icon">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+        <section class="cards ">
+            <div class="card-border fade-In">
+                <div class="card">
+                    <h2 class="card-title">
+                        title1
+                    </h2>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quis aliquam repudiandae, laborum rerum hic.
+                    </p>                
+                </div>
+            </div>
+            <div class="card-boder fade-In">
+                <div class="card">
+                    <h2 class="card-title">
+                        title2
+                    </h2>
+                    <p class="card-text">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam officia consequatur atque numquam quisquam facere unde nostrum, aperiam alias voluptas.
+                    </p>
+                </div>
+            </div>
+
+        </section>
     </main>
     <footer class="footer">
         <p class="footer-text">Designed and Developed by <a class="gradient-text">Niusha Ebrahimi </a></p>
@@ -146,7 +172,12 @@
     </footer>   
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module" src="./jsForAbout.js"></script>
-    
+    <script type="module">
+        import {fadeIn} from './utils.js';
+        const observer = fadeIn()
+        const fadeInElements = document.querySelectorAll('.fade-In')
+        fadeInElements.forEach((el) => observer.observe(el));
+    </script>
 
 </body>
 </html>
