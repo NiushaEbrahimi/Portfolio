@@ -48,7 +48,7 @@ ul{
     column-gap: normal;
     margin: 0px;
 }
-a{
+.nav-a{
     display: inline-flex;
     align-items: center;
     gap: 8px; 
@@ -59,12 +59,12 @@ a{
     transition-duration: 200ms;
     border-radius: 2dvh;
 }
-a:hover{
+.nav-a:hover{
     background-color : white;
     color: black;
 }
 
-a svg {
+.nav-a > svg {
     width: 24px;
     height: 24px;
     vertical-align: middle;

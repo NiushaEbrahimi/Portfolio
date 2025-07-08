@@ -1,5 +1,3 @@
-import { myFunction, fadeIn } from "./utils";
-
 document.addEventListener(`DOMContentLoaded`, function() {
     const element = document.querySelector('.welcome-text-subtitle');
     if (!element) return;
