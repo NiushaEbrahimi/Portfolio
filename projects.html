@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Projects</title>
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="./projects.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -41,41 +42,30 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="welcome fade-In">
-            <div class="picture">
-                <div class="image-container">
-                    <img class="image-prof" src="./446ac60d-cb93-453d-8823-87e0db689f4c.png" alt ="picture of me coding ">
-                    <div class="profile-card-back"></div>
-                </div>
-            </div>
-            <div class="welcome-text">
-                <h1 class="welcome-text-title"> !به پورتفولیو من خوش آمدید</h1>
-                <h2 class="welcome-text-subtitle">فرانت اند دولوپر</h2>
-            </div>
-        </section>
-        <section>
-            <!-- I've put this section for now just to test the fade effect -->
-            <br>
-            <br>
-            <br>
-        </section>
-        <section class="about fade-In">
-            <div class="about-text">
-                <h2 class="about-text-title">راجب من </h2>
-                <p class="about-text-subtitle">
-                    من,نیوشا ابراهیمی هستم و مشتاق هستم در حیطه فرانت اند فعالیت کنم.
-                    html, css,Javascript را به صورت خودخوان یادگرفته ام با استفاده از TheOdinProject , FreeCodeCamp
-                    تسلط قابل قبولی به زبان های Javascript , python  و  c دارم
-                    
+    <section>
+        <div class="examples fade-In">
+            <div class="card fade-In">
+                <img src="./sources/projects/CodePenDashboard.png" alt="code pen proj" class="image image-1">
+                <p class="explain">
+                    <a href="https://codepen.io/ecemgo/full/YzBZjjb">code pen</a>
+                    <a class="a-git" href="https://github.com/NiushaEbrahimi/code-pen-small-proj">proj</a>
                 </p>
             </div>
-            <div class="about-picture">
-                <img src="./446ac60d-cb93-453d-8823-87e0db689f4c.png" alt ="picture of me coding ">
+            <div class="card span-2 fade-In" >
+                <img src="./sources/projects/PixlrClone.jpeg" alt="pixlr clone" class="image image-2">
+                <p class="explain">
+                    <a href="https://pixlr.com/">pixlr</a>
+                    <a class="a-git" href="https://github.com/NiushaEbrahimi/pixlr-clone"> clone</a>
+                </p>
             </div>
-        </section>
-        
-    </main>
+            <div class="card fade-In">
+                <img src="./sources/projects/WeatherApp.png" alt="weather app with api" class="image image-3">
+                <p class="explain">
+                    <a class="a-git" href="https://github.com/NiushaEbrahimi/weatherApp">mini weather site with api</a>
+                </p>
+            </div>
+        </div>
+    </section>
     <footer class="footer">
         <p class="footer-text">Designed and Developed by <a class="gradient-text">Niusha Ebrahimi </a></p>
         <div class="social-media">
@@ -110,29 +100,14 @@
                 </a>
             </button>
         </div>
-    </footer>   
+    </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="./jsForHome.js"></script>
+    <script type="module" src="./jsForAbout.js"></script>
     <script type="module">
-        import { myFunction } from './utils.js';
-        window.onscroll = function() { myFunction(); };
+        import {fadeIn} from './utils.js';
+        const observer = fadeIn()
+        const fadeInElements = document.querySelectorAll('.fade-In')
+        fadeInElements.forEach((el) => observer.observe(el));
     </script>
-    <script type="module">
-        import { fadeIn } from './utils.js';
-        const observer = fadeIn();
-        const fadeInElements = document.querySelectorAll('.fade-In');
-        fadeInElements.forEach(element => {
-            observer.observe(element);
-        });
-    </script>
-    <script type="module">
-        import { copyLink } from './utils.js';
-        const emailLink =copyLink('email')
-        emailLink()
-        const telegramLink = copyLink('telegram')
-        telegramLink()
-    </script>
-    
 </body>
 </html>
