@@ -177,3 +177,24 @@ footer{
     margin: 0px;
     font-size: 1.5rem;
 }
+.span-display{
+    display: inline-block;
+}
+@media (max-width:600px) {
+    .span-display{
+        display: none;
+    }
+    .welcome-text{
+        flex:1
+    }
+    .welcome-text-title , .about-text-title{
+        font-size: 2rem;
+    }
+    .welcome-text-subtitle {
+        font-size: 1.5rem;
+    }
+    br{
+        display: none;
+    }
+
+}
