@@ -7,7 +7,12 @@
     justify-content: center;
     
 }
-
+.about-me{
+    padding-left: 10vw;
+    padding-right: 10vw;
+    height: 70vh;
+    color: white;
+}
 .circle{
     width: 70%;
     height: 70%;
@@ -121,7 +126,6 @@
     /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 5dvw;
-
 }
 .welcome-text-title{
     font-size: 2rem;
@@ -278,4 +282,32 @@
 .fade-In.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width : 600px) {
+    .welcome-text-title{
+        font-size: 1.2;
+    }
+    .welcome-text-subtitle{
+        font-size: 0.9;
+    }
+    .tools{
+        height: 70vh;
+    }   
+    .items{
+        grid-template-columns: 1fr 1fr;
+        /* grid-template-rows: repeat(1fr,6); */
+    }
+    .cards{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+        height: 120vh;
+        margin-top: 5vh;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .card{
+        height: 50vh;
+        width: 100%;
+    }
 }
