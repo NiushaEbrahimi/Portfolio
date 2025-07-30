@@ -2,13 +2,11 @@
     font-family: "Lalezar", system-ui;
     font-weight: 400;
     font-style: normal;
-
 }
 body{
     font-family: "Lalezar", system-ui;
     margin: 0px;
     background: linear-gradient(to bottom right, rgb(38, 13, 53), #2d3894);
-    
 }
 .header{
     width: 100%;
@@ -20,6 +18,100 @@ body{
     font-family: "Poppins", system-ui;
     background-color: rgb(38, 13, 53);
     z-index: 1000;
+}
+.background{
+    position: absolute;
+    background:radial-gradient(#18054b,#02091f);
+    height: 100dvh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(5,1fr);
+    column-gap: 2vw;
+    top:50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100vw;
+}
+.star{
+    width: 1px;
+    height: 1px;
+    background-color: aliceblue;
+    position: relative;
+}
+
+.star-2, .star-4, .star-6, .star-8, .star-10{
+    width: 2px;
+    height: 2px;
+}
+
+.star-2::after, .star-4::after, .star-6::after, .star-8::after, .star-10::after{
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 4px;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: white;
+    animation: shine 1s ease-in-out infinite;
+    animation-direction: alternate;
+}
+.star-2::before, .star-4::before, .star-6::before, .star-8::before, .star-10::before{
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 3px;
+    z-index: -1;
+    top: -10vw;
+    left: -10vw;
+    background-color: white;
+    animation: scale 3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+.star-1::after, .star-3::after, .star-5::after, .star-7::after, .star-9::after{
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 1px;
+    z-index: -1;
+    top: 4vw;
+    left: 7vw;
+    background-color: white;
+    animation: scale 2s ease-in-out infinite;
+    animation-direction: alternate; 
+}
+@keyframes shine {
+    0% {
+        filter: blur(0.2rem);
+        opacity: 0.8;
+    }
+    50% {
+        filter: blur(0.3rem);
+        opacity: 0.85;
+    }
+    75% {
+        filter: blur(0.4rem);
+        opacity: 0.9;
+    }
+    100% {
+        filter: blur(0.5rem);
+        opacity: 1;
+    }
+}
+@keyframes scale{
+    0%{scale:1;}
+    20%{scale:1.15;}
+    30%{scale:1.35;}
+    50%{scale:1.6;}
+    60%{scale:1.7;}
+    80%{scale:1.8;}
+    90%{scale: 1.9;}
+    100%{scale:2;}
+}
+main{
+    padding-top: 20vh;
 }
 .scrolled{
     width: 100%;
@@ -59,6 +151,19 @@ ul{
     transition-duration: 200ms;
     border-radius: 2dvh;
 }
+.footer-nav{
+    width: 100%;
+    background-color : white;
+    color: black;
+    cursor: pointer;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.footer-nav:hover{
+    transform: scale(1.1);
+    background-color: white;
+}
 .nav-a:hover{
     background-color : white;
     color: black;
@@ -73,22 +178,51 @@ ul{
 .welcome, .about , .first-section{
     padding-left: 10dvw;
     padding-right: 10dvw;
-    height: 90dvh;    
+    height: 80dvh;    
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 10dvw;
     color: white;
+    position: relative;
+}
+.image-prof{
+    border-radius: 60%;
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 70%;
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.26);
+}
+.profile-card-back{
+    position: absolute;
+    border-radius: 60%;
+    background-color: white;
+    backface-visibility: hidden;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    text-align: center;
+    color: #6c4285;
+    transform: rotateY(180deg);
+    font-size: 2rem;
 }
 .image-container{
+    position: absolute;
     transition-duration: 1000ms;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    width: 100%;
+    height: 100%;
 }
 .image-container:hover{
     transform: rotateY(180deg);   
-    background-image: white;
     cursor: pointer;
-    
 }
+
 
 .about-me{
     height: 120dvh;
@@ -102,14 +236,20 @@ ul{
 }
 .picture{
     flex : 1;
-    
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
-.picture img , .about-picture img {
+.about-picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+}
+.about-picture{
+    flex:1;
+}
+.about-text{
+    flex:3;
 }
 .welcome-text-title , .about-text-title{
     font-size: 3rem;
@@ -157,17 +297,7 @@ footer{
     grid-template-columns: 1fr 1fr 1fr ;
     gap: 3dvw;
 }
-.btn{
-    border: none;
-    border-radius: 2dvh;
-    transition-duration: 200ms;
-    background-color: white;
-    cursor: pointer;
-}
-.btn:hover{
-    transform: scale(1.1);
-    background-color: white;
-}
+
 .gradient-text{
     background: linear-gradient(to right, #6c4285, #2d3894);
     -webkit-background-clip: text;
@@ -188,13 +318,26 @@ footer{
         flex:1
     }
     .welcome-text-title , .about-text-title{
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
-    .welcome-text-subtitle {
-        font-size: 1.5rem;
+    .welcome-text-subtitle{
+        font-size: 1.2rem;
+    }
+    .about-text-subtitle{
+        font-size: 0.9rem;
     }
     br{
         display: none;
     }
-
+    .about-picture{
+        display: none;
+    }
+    footer{
+        height: 20vh;
+    }
+    .profile-card-back , .image-prof{
+        /* fix */
+        width: 40%;
+        height: 20%;
+    }
 }
