@@ -21,8 +21,8 @@ section{
 .card{
     padding-top:5vh;
     padding-bottom: 5vh;
-    width: 100%;
-    height: auto;
+    /* width: 100%; */
+    /* height: auto; */
     display: grid;
     justify-content: center;
     align-items: center;
@@ -150,9 +150,9 @@ a{
         column-gap: 0px;
     }
     .span-2{
-        grid-row-start: none;
-        grid-column-start: none;
-        grid-column-end: none;
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 1;
     }
     .card{
         height: none;
