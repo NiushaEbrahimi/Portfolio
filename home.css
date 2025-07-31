@@ -174,6 +174,7 @@ ul{
     vertical-align: middle;
     display: inline-block;
 }
+/* here */
 .welcome, .about , .first-section{
     padding-left: 10dvw;
     padding-right: 10dvw;
@@ -216,12 +217,23 @@ ul{
     transition: all 0.5s ease;
     width: 100%;
     height: 100%;
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
 }
 .image-container:hover{
     transform: rotateY(180deg);   
     cursor: pointer;
 }
 
+.section-mobile{
+    display: none;
+    height: 20vh;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
 
 .about-me{
     height: 120dvh;
@@ -294,7 +306,7 @@ footer{
     justify-content: center;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr ;
-    gap: 3dvw;
+    column-gap:20dvw;
 }
 
 .gradient-text{
@@ -338,5 +350,26 @@ footer{
         /* fix */
         width: 40%;
         height: 20%;
+    }
+    ul{
+        padding-left: 0px;
+    }
+    .background{
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 2vw; 
+    }
+    .star-2::before, .star-4::before, .star-6::before, .star-8::before{
+        width: 2px;
+        height: 2px;
+    }
+    .star-10 , .star-10::after , .star-10::before{
+        display: none;
+    }
+    .picture{
+        flex:none;
+        display: none;
+    }
+    .section-mobile{
+        display: inline-block;
     }
 }
