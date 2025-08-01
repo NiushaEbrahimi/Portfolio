@@ -152,7 +152,6 @@ ul{
     border-radius: 2dvh;
 }
 .footer-nav{
-    width: 100%;
     background-color : white;
     color: black;
     cursor: pointer;
@@ -306,7 +305,7 @@ footer{
     justify-content: center;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr ;
-    column-gap:20dvw;
+    column-gap:5dvw;
 }
 
 .gradient-text{
@@ -329,13 +328,10 @@ footer{
         flex:1
     }
     .welcome-text-title , .about-text-title{
-        font-size: 1.7rem;
+        font-size: 1.2;
     }
-    .welcome-text-subtitle{
-        font-size: 1.2rem;
-    }
-    .about-text-subtitle{
-        font-size: 0.9rem;
+    .welcome-text-subtitle , .about-text-subtitle{
+        font-size: 0.9;
     }
     br{
         display: none;
