@@ -147,9 +147,8 @@
     column-gap: 5vw;
 }
 .card{
+    width: auto;
     height: 75vh;
-    padding-left: 10vw;
-    padding-right: 10vw;
     text-align: center;
     line-height: 2rem;
     background-color: rgb(34, 34, 34);
@@ -215,6 +214,7 @@
     opacity: 0.5;
     filter: blur(10px)
 }
+
 @property --angle{
     syntax: "<angle>";
     initial-value:90deg ;
@@ -310,7 +310,10 @@
     }
     .card{
         height: 50vh;
-        width: 100%;
-
+        width: 70vw;
+    }
+    .card-border{
+        padding: 0px;
+        margin: 0px;
     }
 }

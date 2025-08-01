@@ -1,3 +1,14 @@
+if(window.innerWidth < 600){
+    document.querySelector(".welcome").innerHTML= `
+            <div class="welcome-text">
+                <h1 class="welcome-text-title">به پورتفولیو من خوش آمدید</h1>
+                <h2 class="welcome-text-subtitle">فرانت اند دولوپر</h2>
+            </div>
+            <div class="picture">
+                <img src="./PictureWithoutBackground.PNG" alt="" class="image-prof">
+            </div>
+    `;
+}
 document.addEventListener(`DOMContentLoaded`, function() {
     const element = document.querySelector('.welcome-text-subtitle');
     if (!element) return;
@@ -35,4 +46,3 @@ document.addEventListener(`DOMContentLoaded`, function() {
 });
 
 
-  

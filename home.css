@@ -185,6 +185,9 @@ ul{
     color: white;
     position: relative;
 }
+.welcom{
+    flex-direction: row;
+}
 .image-prof{
     border-radius: 60%;
     position: absolute;
@@ -328,10 +331,10 @@ footer{
         flex:1
     }
     .welcome-text-title , .about-text-title{
-        font-size: 1.2;
+        font-size: 1;
     }
     .welcome-text-subtitle , .about-text-subtitle{
-        font-size: 0.9;
+        font-size: 0.7;
     }
     br{
         display: none;
@@ -361,11 +364,27 @@ footer{
     .star-10 , .star-10::after , .star-10::before{
         display: none;
     }
-    .picture{
+    /* .picture{
         flex:none;
         display: none;
-    }
+    } */
     .section-mobile{
         display: inline-block;
+    }
+    .welcome{
+        flex-direction: column;
+        padding-bottom: 10vh;
+    }
+    .image-prof{
+        height: 100%;
+        width: 100%;
+        box-shadow:none;
+    }
+    .welcome-text{
+        flex:1;
+    }
+    .picture{
+        flex: 2;
+        width: 100%;
     }
 }
