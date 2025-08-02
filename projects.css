@@ -80,7 +80,8 @@ img{
     grid-column-start: 2;
     grid-column-end: -1;
 }
-.image-1,.image-2,.image-3{
+.image{
+    border: 1px solid white;
     width: 400px;
     transition-duration: 300ms;
 }
@@ -90,14 +91,15 @@ img:hover{
 }
 a{
     display: inline-block;
-    color: black;
+    color: white;
 }
 .explain{
-    background-color: rgb(132, 66, 255);
-    color: black;
-}
-.a-git:hover{
     color: white;
+    cursor:default;
+    direction: rtl;
+}
+a:hover{
+    color: #8442ff;
 }
 .more{
     margin-top: 5vh;

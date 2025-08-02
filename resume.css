@@ -1,0 +1,43 @@
+main{
+    height: 100vh;
+    padding-top: 20vh;
+    padding-bottom: 10vh;
+}
+
+.resume{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    column-gap: 5vw;
+}
+.image-container-resume{
+    flex: 2;
+    height: 100%;
+    overflow: scroll;
+    border-radius: 5vh;
+}
+.image-cv{
+    width: 100%;
+    height: auto;
+}
+.download{
+    flex: 1;
+    background-color: #ffffff6b;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    color: black;
+    border-radius:5vh ;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    transition-duration: 350ms;
+    
+}
+.download:hover{
+    background-color: aliceblue;
+}

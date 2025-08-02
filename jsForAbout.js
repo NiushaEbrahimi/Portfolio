@@ -27,12 +27,11 @@ buttons.forEach(button =>{
   let onceTel =0;
   let onceGit =0;
   let onceMail=0;
-  let msg = 'click to copy'
   button.addEventListener("mouseover",(element)=>{
     if (element.target.id ==='tel' & onceTel!==1){
       const container = document.getElementById('tel');
       const newP = document.createElement("p");
-      newP.textContent = msg;
+      newP.textContent = 'برای کپی کردن ایدی کلیک کنید';
       newP.classList = 'contact-p';
       newP.id ='tel';
       container.appendChild(newP) ;
@@ -40,7 +39,7 @@ buttons.forEach(button =>{
     }else if(element.target.id ==='mail' & onceMail!==1){
       const container = document.getElementById('mail');
       const newP = document.createElement("p");
-      newP.textContent = msg;
+      newP.textContent = 'برای کپی کردن ادرس ایمیل کلیک کنید';
       newP.classList = 'contact-p';
       newP.id ='mail';
       container.appendChild(newP) ;
@@ -48,7 +47,7 @@ buttons.forEach(button =>{
     }else if(element.target.id ==='github' & onceGit!==1){
       const container = document.getElementById('github');
       const newP = document.createElement("p");
-      newP.textContent = msg;
+      newP.textContent = 'برای ورود به صفحه گیتهاب من کلیک کنید';
       newP.classList = 'contact-p';
       newP.id ='github';
       container.appendChild(newP) ;
