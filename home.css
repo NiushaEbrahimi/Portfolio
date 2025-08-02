@@ -230,7 +230,7 @@ ul{
 
 .section-mobile{
     display: none;
-    height: 20vh;
+    height: 0px;
     width: 100%;
     display: grid;
     justify-content: center;
@@ -345,10 +345,10 @@ footer{
         padding: 0px;
     }
     .welcome-text-title , .about-text-title{
-        font-size:2rem;
+        font-size:1.7rem;
     }
     .welcome-text-subtitle , .about-text-subtitle{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     br{
         display: none;
@@ -400,5 +400,8 @@ footer{
     .picture{
         flex: 3;
         width: 100%;
+    }
+    .section-mobile{
+        height: 20vh;
     }
 }
