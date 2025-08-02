@@ -334,7 +334,6 @@ footer{
         grid-template-rows: 40px 30px;
         gap: 1em;
         text-align: end;
-        background-color: red;
         padding-top: 15vh;
         padding-bottom: 5vh;
     }
