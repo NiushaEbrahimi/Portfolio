@@ -41,3 +41,23 @@ main{
 .download:hover{
     background-color: aliceblue;
 }
+@media (max-width:600px) {
+    main{
+        height: 70vh;
+    }
+    .resume{
+        flex-direction: column;
+        row-gap: 10vh;
+    }    
+    .image-container-resume{
+        flex: 6;
+        border-radius: 2vh;
+    }
+    .download{
+        padding-left: 2vw;
+        padding-right: 2vw;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border-radius: 2vh;
+    }
+}
