@@ -245,7 +245,6 @@ ul{
     display: grid;
     justify-content: center;
     align-items: center;
-    
 }
 .picture{
     flex : 1;
@@ -324,17 +323,33 @@ footer{
     display: inline-block;
 }
 @media (max-width:600px) {
+    main{
+        padding-top: 10vh;
+    }
     .span-display{
         display: none;
     }
     .welcome-text{
-        flex:1
+        flex:0.5;
+        grid-template-rows: 40px 30px;
+        gap: 1em;
+        text-align: end;
+        background-color: red;
+        padding-top: 15vh;
+        padding-bottom: 5vh;
+    }
+    h1{
+        margin: 0px;
+    }
+    .welcome-text-subtitle , .welcome-text-subtitle{
+        margin: 0px;
+        padding: 0px;
     }
     .welcome-text-title , .about-text-title{
-        font-size: 1;
+        font-size:2rem;
     }
     .welcome-text-subtitle , .about-text-subtitle{
-        font-size: 0.7;
+        font-size: 1.5rem;
     }
     br{
         display: none;
@@ -384,7 +399,7 @@ footer{
         flex:1;
     }
     .picture{
-        flex: 2;
+        flex: 3;
         width: 100%;
     }
 }
