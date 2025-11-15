@@ -5,7 +5,7 @@ if(window.innerWidth < 600){
                 <h2 class="welcome-text-subtitle">فرانت اند دولوپر</h2>
             </div>
             <div class="picture">
-                <img src="./PictureWithoutBackground.PNG" alt="" class="image-prof">
+                <img src="./sources/PictureWithoutBackground.PNG" alt="" class="image-prof">
             </div>
     `;
 }
