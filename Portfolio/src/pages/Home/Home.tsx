@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import changeWord from '../../utils/typingEffect.ts'
 import styles from "../../assets/css/Home/home.module.css"
-import { Container, Row, Col } from "react-bootstrap";
-import image1 from "../../../public/images/CodePenDashboard.png"
-import image2 from "../../../public/images/PixlrClone.jpeg"
-import image3 from "../../../public/images/Dashboard-app-react-bootstrap.png"
-import image4 from "../../../public/images/CompuTech-wordpress.png"
+import AboutComponent from "../../pages/Home/AboutComponent.tsx";
+import Technologies from "../../pages/Home/Technologies.tsx";
+import ProjectsComponent from "../../pages/Home/ProjectsComponent.tsx";
+import HomesFirstSection from "../../pages/Home/HomesFirstSection.tsx";
+
+
 function HomeComponent() {
     useEffect(() => {
         const cleanup = changeWord();
@@ -83,62 +84,12 @@ function HomeComponent() {
     return (
         <>
             {/* make these components */}
-            <Container
-                className="vh-100 d-flex align-items-center justify-content-center"
-                id="Home"
-            >
-                <Row className="d-flex justify-content-center text-center">
-                    <h1>Hi, <span style={{color:"var(--color-7)"}}>Niusha</span> Here.</h1>
-                    <h6>I create stuff.</h6>
-                    <p><span className="change-word">Developer</span><span className={styles.typingEffect}>|</span></p>
-                </Row>
-            </Container>
-            <Container className="mb-5 vh-80 d-flex align-items-center justify-content-center">
-                <div id="scaleBox" className={`${styles.box} rounded-4 shadow d-flex align-items-center justify-content-center text-center flex-column`}>
-                    <h1>Niusha Ebrahimi</h1>
-                    <p>hello</p>
-                    
-                </div>
-            </Container>
-            <Container className="mt-5 d-flex flex-column justify-content-center align-items-center text-center">
-                <h2 className="m-0">Projects</h2>
-                <Container className={`vh-100 d-flex justify-content-center align-items-center ${styles.projects_container}`} id="Projects">
-                <div className={`overflow-hidden ${styles.scroll_container_wrapper}`}>
-                    <div className={`"d-flex flex-row g-5 justify-content-center align-items-center text-center ${styles.scroll_container}`}>
-                        <div className={`p-2 rounded-4 ${styles.scroll_item}`}>
-                            <img src={image1} style={{width:"100%" , height:"auto"}}/>
-                        </div>
-                        <div className={`p-2 rounded-4 ${styles.scroll_item}`}>
-                            <img src={image2} style={{width:"100%" , height:"auto"}}/>
-                        </div>
-                        <div className={`p-2 rounded-4 ${styles.scroll_item}`}> 
-                            <img src={image3} style={{width:"100%" , height:"auto"}}/>
-                        </div>
-                        <div className={`p-2 rounded-4 ${styles.scroll_item}`}> 
-                            <img src={image4} style={{width:"100%" , height:"auto"}}/>
-                        </div>
-                        <div className={`p-2 rounded-4 ${styles.scroll_item}`}>
-                            <img src={image1} style={{width:"100%" , height:"auto"}}/>
-                        </div>
-                        <div className={`p-2 rounded-4 ${styles.scroll_item}`}>
-                            <img src={image2} style={{width:"100%" , height:"auto"}}/>
-                        </div>
-                        <div className={`p-2 rounded-4 ${styles.scroll_item}`}> 
-                            <img src={image3} style={{width:"100%" , height:"auto"}}/>
-                        </div>
-                        <div className={`p-2 rounded-4 ${styles.scroll_item}`}> 
-                            <img src={image4} style={{width:"100%" , height:"auto"}}/>
-                        </div>
-                    </div>
-                </div>
-            </Container>
-            </Container>
-            <Container className="mt-5 d-flex flex-column justify-content-center align-items-center text-center">
-                {/* technologies that i know */}
-            </Container>
-            <Container className="mt-5 d-flex flex-column justify-content-center align-items-center text-center">
-                {/* aboute me */}
-            </Container>
+            <HomesFirstSection styles={styles}/>
+            <AboutComponent styles={styles}/>
+            
+            <ProjectsComponent stylesModule={styles} />
+            <div style={{height:"40vh"}}></div>
+            <Technologies />
             
         </>
     )

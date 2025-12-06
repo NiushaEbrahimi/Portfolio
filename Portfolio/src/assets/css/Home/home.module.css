@@ -85,3 +85,38 @@
 .scroll-container {
   transition: transform 0.3s ease;
 }
+
+.scale_box{
+    border: 1px solid white;
+    /* convert number -> px */
+    box-shadow: 0 0 calc(var(--shadow-opacity) * 1px) rgba(255, 255, 255, var(--bs-bg-opacity));
+    animation: box-shadow-animation 3s infinite;
+}
+
+@property --bs-bg-opacity {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0.2;
+}
+
+@property --shadow-opacity {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0.5;
+}
+
+@keyframes box-shadow-animation {
+    0% {
+        --shadow-opacity: 0.5;
+        --bs-bg-opacity: 0.2;
+    }
+    50% {
+        --shadow-opacity: 1;
+        --bs-bg-opacity: 0.5;
+    }
+    100% {
+        --shadow-opacity: 0.5;
+        --bs-bg-opacity: 0.2;
+    }
+  
+}
