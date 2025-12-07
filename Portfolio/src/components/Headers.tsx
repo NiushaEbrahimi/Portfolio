@@ -1,6 +1,5 @@
 import Form from "react-bootstrap/Form";
 import {Row, Col } from "react-bootstrap";
-// import { Link } from "react-router-dom";
 import "../assets/css/headers.css"
 
 function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
@@ -8,9 +7,10 @@ function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
     <div className="d-flex justify-content-center align-items-center header-container">
       <Row className="d-flex justify-content-between p-3 rounded glass-blur">
         <Col xs={6} className="d-flex justify-content-between">
-          <a href="#Home" className="d-flex align-items-center navbar-brand">Home</a>
-          <a href="#Projects" className="d-flex align-items-center navbar-brand">Projects</a>
-          <a href="#Resume" className="d-flex align-items-center navbar-brand">Resume</a>
+          <a id="home" href="#Home" className="d-flex align-items-center navbar-brand">Home</a>
+          <a id="about" href="#About" className="d-flex align-items-center navbar-brand">About</a>
+          <a id="projects" href="#Projects" className="d-flex align-items-center navbar-brand">Projects</a>
+          <a id="resume" href="#Resume" className="d-flex align-items-center navbar-brand">Resume</a>
         </Col>
 
         <Col xs={6} className="d-flex justify-content-end">

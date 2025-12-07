@@ -56,7 +56,7 @@
 }
 
 .scroll_item {
-    background-color: var(--color-8) !important;
+  background-color: var(--color-6) !important;
   /* min-width: 120px; */
   padding: 15px 20px;
   border-radius: 8px;

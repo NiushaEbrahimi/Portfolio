@@ -7,9 +7,7 @@ import Resume from "./pages/Resume/Resume";
 
 import Headers from "./components/Headers";
 import ThemeContext from "./components/ThemeContext";
-// -------------------------
-//   THEME CONTEXT SETUP
-// -------------------------
+import Footer from "./components/Footer";
 
 function App() {
   const [dark, setDark] = useState<boolean>(true);
@@ -24,7 +22,7 @@ function App() {
       <BrowserRouter>
         <Headers dark={dark} toggle={toggle} />
         <Routes>
-          <Route path="" element={<Home />} />
+          <Route path="" element={<Home dark={dark}/>} />
 
           <Route path="/projects">
             <Route index element={<Projects />} />
@@ -33,6 +31,7 @@ function App() {
 
           <Route path="/resume" element={<Resume />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </ThemeContext.Provider>
   );

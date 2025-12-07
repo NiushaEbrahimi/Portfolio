@@ -12,6 +12,9 @@
   --color-3: #D5C6E0;
   --color-4: #E5D6E4;
   --color-5: #F5E6E8;
+  --color-6: #d5c6e0;
+  --color-7: #B195C6;
+  --color-8: #64ffda;
 
 }
 
@@ -20,6 +23,7 @@
 }
 
 body{
+  overflow-x: hidden;
   padding: 0;
   margin: 0;
   color: var(--color-black) !important;
@@ -37,7 +41,7 @@ body{
   --color-5: #4b284f;
   --color-6: #d5c6e0;
   --color-7: #B195C6;
-  --color-8: #D5C6E0;
+  --color-8: #64ffda;
   background-color: var(--color-1) !important;
   color: var(--color-text-white) !important;
 }

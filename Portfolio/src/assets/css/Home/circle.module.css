@@ -24,10 +24,11 @@
 }
 
 .circle_2{
+    --circle-color : var(--color-2);
     z-index:30;
     width: 70%;
     height: 60%;
-    background: conic-gradient(white var(--rotation-angle) , transparent 0% );
+    background: conic-gradient(var(--circle-color) var(--rotation-angle) , transparent 0% );
     animation: rotate 2s forwards;
 }
 

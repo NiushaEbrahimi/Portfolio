@@ -5,8 +5,9 @@ import AboutComponent from "../../pages/Home/AboutComponent.tsx";
 import Technologies from "../../pages/Home/Technologies.tsx";
 import ProjectsComponent from "../../pages/Home/ProjectsComponent.tsx";
 import HomesFirstSection from "../../pages/Home/HomesFirstSection.tsx";
+import Resume from "./Resume.tsx";
 
-function HomeComponent() {
+function HomeComponent({dark}:{dark:boolean}) {
     useEffect(() => {
         const cleanup = changeWord();
         return cleanup;
@@ -14,9 +15,9 @@ function HomeComponent() {
 
     useEffect(() => {
         const el = document.getElementById("scaleBox");
-        if (!el) return; // prevent TS18047
+        if (!el) return;
 
-        const element = el; // promote non-null reference
+        const element = el;
         const containers = document.querySelectorAll<HTMLElement>(".carts-container");
 
         const MIN_SCALE = 0.6;
@@ -87,13 +88,16 @@ function HomeComponent() {
     return (
         <>
             <HomesFirstSection styles={styles} />
-            <AboutComponent />
+            <AboutComponent dark={dark} />
 
-            {/* Note: this component uses different prop name */}
+            <div style={{ height: "20vh" }}></div>
             <ProjectsComponent stylesModule={styles} />
 
-            <div style={{ height: "40vh" }}></div>
+            <div style={{ height: "20vh" }}></div>
             <Technologies />
+
+            <div style={{ height: "20vh" }}></div>
+            <Resume/>
         </>
     );
 }

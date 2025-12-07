@@ -1,5 +1,5 @@
 const LIST_OF_WORDS: string[] = [
-  "Frontend Dveloper",
+  "Frontend Developer",
   "Software Engineer",
   "Student at SRB.IAU",
 ];

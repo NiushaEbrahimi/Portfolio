@@ -1,7 +1,7 @@
 import styles from "../assets/css/Home/circle.module.css"
 import React from "react"
 
-function CircleComponent({percent, name}:{percent:number, name:string}) {
+function CircleComponent({percent, name, colorCircle}:{percent:number, name:string, colorCircle:string}) {
     return(
         <div className={styles.circle}>
             <div
@@ -9,7 +9,7 @@ function CircleComponent({percent, name}:{percent:number, name:string}) {
             ></div>
             <div 
                 className={styles.circle_2}
-                style={{ "--target-angle": `${percent}%` } as React.CSSProperties}
+                style={{ "--target-angle": `${percent}%`, "--circle-color" : `${colorCircle}` } as React.CSSProperties}
             ></div>
             {name}
         </div>
