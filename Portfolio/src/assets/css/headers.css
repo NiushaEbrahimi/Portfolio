@@ -17,11 +17,21 @@
   top: 0;
   left: 0;
   width: 100%;
-  /* background-color: rgba(0, 0, 0, 0.12); */
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: #ffffff1f;
   border: 1px solid rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(6px) saturate(120%);
   backdrop-filter: blur(6px) saturate(120%);
+}
+
+.glass-blur-resume{
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  background-color: #ffffff1f;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  backdrop-filter: blur(2px) saturate(120%);
 }
 
 .theme-switch .form-check-input {

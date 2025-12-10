@@ -30,7 +30,10 @@ function AboutComponent({ dark }: { dark: boolean}) {
                     color : dark ? "var(--color-6)" : "var(--color-1)"
                 }}
             >
-                <h1 className="mb-3">About <span style={{color:"var(--color-7)"}}>Me</span></h1>
+                <h1 className="mb-3">
+                    About
+                    <span style={{color:"var(--color-7)"}}>Me</span>
+                </h1>
                 <Container className="d-flex ">
                 <p className="fs-4 p-2 w-100" style={{flex : 1 }}>
                     I'm a <span style={{color:"var(--color-8)"}}>frontend </span>
