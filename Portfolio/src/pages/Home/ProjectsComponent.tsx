@@ -26,7 +26,7 @@ function ProjectsComponent({stylesModule}: {stylesModule: StylesModule,dark:bool
 
         <Container ref={ref} className="mt-5 d-flex flex-column justify-content-center align-items-center text-center">
             <h2 className="m-0">Projects</h2>
-            <Container className={`vh-100 d-flex justify-content-center align-items-center ${stylesModule.projects_container}`} id="Projects">
+            <Container className={`vh-100 d-flex justify-content-center align-items-center ${stylesModule.projects_container}`} id="projects-page">
                 <div className={`overflow-hidden ${stylesModule.scroll_container_wrapper}`}>
                     <div className={`"d-flex flex-row g-5 justify-content-center align-items-center text-center ${stylesModule.scroll_container}`}>
                         <div className={`p-2 rounded-4 ${stylesModule.scroll_item}`}>

@@ -20,7 +20,7 @@ function AboutComponent({ dark }: { dark: boolean}) {
     return(
         <Container
             className="vh-100 d-flex align-items-center justify-content-center"
-            id="Home"
+            id="about-page"
             ref={ref}
         >
             <Row 

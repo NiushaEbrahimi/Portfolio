@@ -1,7 +1,13 @@
 from django.db import models
 
-# Create your models here.
 class Technologies(models.Model):
-    techName = models.TextField(max_length=30)
-    percent = models.IntegerField()
-    category = models.TextField()
+    techName = models.CharField(max_length=50)
+    percent = models.PositiveIntegerField()
+    category = models.CharField(max_length=50)
+
+
+class MenuItem(models.Model):
+    title = models.CharField(max_length=100)  
+    svg_icon = models.TextField()  
+    order = models.PositiveIntegerField(default=0)  
+    is_active = models.BooleanField(default=True) 

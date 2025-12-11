@@ -24,7 +24,7 @@ function HomesFirstSection({styles} : {styles: StylesModule}) {
         <Container
             ref={ref}
             className="vh-100 d-flex align-items-center justify-content-center"
-            id="Home"
+            id="home-page"
         >
             {entry?.isIntersecting && <>
                 <Row className={`d-flex justify-content-center text-center ${stylesFade.fadeIn}`}>
