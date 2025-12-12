@@ -7,7 +7,7 @@ type StylesModule = { [key: string]: string };
 
 function HomesFirstSection({styles} : {styles: StylesModule}) {
     const [ref, entry] = useIntersectionObserver({
-        threshold: 0.8,
+        threshold: 0,
         root: null,
         rootMargin: "0px",
     });

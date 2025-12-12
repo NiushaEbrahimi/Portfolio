@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
   const [menuItems, setMenuItems] = useState([]);
   const currentColor = dark ? "white" : "black"
-
+  const numberSVG = 21
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,24 +27,30 @@ function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
 
   return (
     <div className="d-flex justify-content-center align-items-center header-container">
-      <Row className="d-flex justify-content-between p-3 rounded glass-blur">
+      <Row className="d-flex justify-content-between p-3 glass-blur">
         <Col xs={6} className="d-flex justify-content-between">
           {menuItems.map((item) => (
-            <a
-              key={item.title}
-              id={item.title}
-              href={`#${item.title}-page`}
-              className="d-flex align-items-center navbar-brand"
-              dangerouslySetInnerHTML={{ __html: item.svg_icon }}
-              ref={(el) => {
-                if (el) {
-                  const svg = el.querySelector("svg");
-                  if (svg) {
-                    svg.setAttribute("fill", currentColor);
+            <div className="d-flex position-relative navbar-brand" >
+              <a
+                key={item.title}
+                id={item.title}
+                href={`#${item.title}-page`}
+                className=" d-flex align-items-center"
+                style={{width : "100%"}}
+                dangerouslySetInnerHTML={{ __html: item.svg_icon }}
+                ref={(el) => {
+                  if (el) {
+                    const svg = el.querySelector("svg");
+                    if (svg) {
+                      svg.setAttribute("fill", currentColor);
+                      svg.setAttribute("width", numberSVG);
+                      svg.setAttribute("height", numberSVG);
+                    }
                   }
-                }
-              }}
-            />
+                }}
+              />
+              <span className={`subTitle subTitle-${item.title}`}>{item.title}</span>
+            </div>
           ))}
         </Col>
 

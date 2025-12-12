@@ -51,9 +51,9 @@ export default function Resume(){
     return(
 
         <Container ref={ref} className="w-100 vh-100" style={{padding : "0vh 7vw"}}>
-            <Container className="d-flex justify-content-center align-items-center gap-4" style={{position : "relative"}}>
+            <Container id="resume-page" className="d-flex justify-content-center align-items-center gap-4" style={{position : "relative"}}>
             {entry?.isIntersecting && <>
-                <Container className={` ${styles.fadeLeft}`} style={{flex :1 }}>
+                <Container className={` ${styles.fadeLeft}`} style={{flex :1 }} >
                     <div className={`d-flex justify-content-center align-items-center p-relative ${stylesHome.resumeContainerParent}`}>
                         <div className={stylesHome.resumeContainer} >
                             <img style={{maxWidth : "15vw" , maxHeight : "40vh", borderRadius : "1rem"}} src={resumeImage} alt="" />
