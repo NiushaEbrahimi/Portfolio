@@ -1,6 +1,7 @@
 import { Container, Row } from "react-bootstrap";
 import { useIntersectionObserver } from "@uidotdev/usehooks";
 import stylesFade from "../../assets/css/fade.module.css"
+import stylesHome from "../../assets/css/Home/home.module.css"
 import { useEffect } from "react";
 
 type StylesModule = { [key: string]: string };
@@ -28,7 +29,7 @@ function HomesFirstSection({styles} : {styles: StylesModule}) {
         >
             {entry?.isIntersecting && <>
                 <Row className={`d-flex justify-content-center text-center ${stylesFade.fadeIn}`}>
-                    <h1>Hi, <span style={{color:"var(--color-7)"}}>Niusha</span> Here.</h1>
+                    <h1>Hi, <span className={stylesHome.aboutTitle}>Niusha</span> Here.</h1>
                     <h6>I create stuff.</h6>
                     <p><span className="change-word">Developer</span><span className={styles.typingEffect}>|</span></p>
                 </Row>

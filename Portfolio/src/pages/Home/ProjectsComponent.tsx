@@ -5,6 +5,7 @@ import image3 from "../../../public/images/Dashboard-app-react-bootstrap.png"
 import image4 from "../../../public/images/CompuTech-wordpress.png"
 import { useIntersectionObserver } from "@uidotdev/usehooks";
 import { useEffect } from "react";
+import stylesHome from "../../assets/css/Home/home.module.css"
 
 type StylesModule = { [key: string]: string };
 
@@ -25,7 +26,7 @@ function ProjectsComponent({stylesModule}: {stylesModule: StylesModule}) {
     return(
 
         <Container ref={ref} className="mt-5 d-flex flex-column justify-content-center align-items-center text-center">
-            <h2 className="m-0">Projects</h2>
+            <h2 className={stylesHome.aboutTitle}>Projects</h2>
             <Container className={`vh-100 d-flex justify-content-center align-items-center ${stylesModule.projects_container}`} id="projects-page">
                 <div className={`overflow-hidden ${stylesModule.scroll_container_wrapper}`}>
                     <div className={`"d-flex flex-row g-5 justify-content-center align-items-center text-center ${stylesModule.scroll_container}`}>

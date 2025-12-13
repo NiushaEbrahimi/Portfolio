@@ -20,7 +20,7 @@
     margin-top: 1vh;
     width: 60%;
     height: 50%;
-    background-color: var(--color-1);
+    background-color: #0b0e12;
     z-index: 100;
 }
 .circle_1 > span > svg{
@@ -33,25 +33,25 @@
     z-index:30;
     width: 70%;
     height: 60%;
-    background: conic-gradient(var(--circle-color) var(--rotation-angle) , transparent 0% );
+    background: conic-gradient(var(--circle-color) calc(var(--rotation-angle)*1%) , transparent 0% );
     animation: rotate 2s forwards;
 }
 
 @property --rotation-angle {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 0%;
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0 ;
 }
 
 @property --target-angle {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 0%;
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0 ;
 }
 
 @keyframes rotate {
     from {
-        --rotation-angle: 0%;
+        --rotation-angle: 0;
     }
     to {
         --rotation-angle: var(--target-angle);

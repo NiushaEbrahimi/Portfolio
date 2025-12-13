@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects/Projects";
-import Resume from "./pages/Resume/Resume";
 
 import Headers from "./components/Headers";
 import ThemeContext from "./components/ThemeContext";
@@ -29,7 +28,6 @@ function App() {
             <Route path=":id" element={<Projects />} />
           </Route>
 
-          <Route path="/resume" element={<Resume />} />
         </Routes>
         <Footer/>
       </BrowserRouter>

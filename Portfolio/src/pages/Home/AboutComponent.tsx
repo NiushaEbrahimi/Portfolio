@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import styles from "../../assets/css/Home/home.module.css"
 import { useEffect } from "react";
 import { useIntersectionObserver } from "@uidotdev/usehooks";
@@ -28,14 +28,13 @@ function AboutComponent() {
             ref={ref}
         >
             <Row 
-                className={`d-flex justify-content-start p-5 rounded-5 ${styles.scale_box}`}
+                className={`p-5 rounded-5 ${styles.scale_box}`}
                 id="scaleBox"
                 // style={{backgroundColor : dark ?  "transparent" : "var(--color-3)" , 
                 //     color : dark ? "var(--color-6)" : "var(--color-1)"
                 // }}
             >
-                <Container className="d-flex ">
-                <div className="p-2 w-100" style={{flex : 1 }}>
+                <Col xs={12} md={12} lg={6} className="p-2 ">
                     <h1 className={stylesHome.aboutTitle}>
                         About Me
                     </h1>
@@ -50,13 +49,12 @@ function AboutComponent() {
                         university studies, I'm constantly learning new tools and best
                         practices to write better code and create more polished products.
                     </p>
-                </div>
-                <div className={`w-100 d-flex justify-content-center align-items-center ${stylesHome.imageContainer} `} style={{flex : 1}}>
+                </Col>
+                <Col xs={12} md={12} lg={6} className={`d-flex justify-content-center align-items-center ${stylesHome.imageContainer} `}>
                     <img src={imageDeveloper} style={{width : "50%"}}/>
                     <img src={coffeeCup} className={stylesHome.coffeeCup}/>
                     <img src={headsetImage} className={stylesHome.headsetImage}/>
-                </div>
-                </Container>
+                </Col>
             </Row>
         </Container>
     )
