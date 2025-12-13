@@ -3,10 +3,16 @@ import { Row, Col } from "react-bootstrap";
 import "../assets/css/headers.css";
 import { useEffect, useState } from "react";
 
+interface menuItem {
+  id: number;
+  title : string;
+  svg_icon : string;
+}
+
 function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
   const [menuItems, setMenuItems] = useState([]);
-  const currentColor = dark ? "white" : "black"
-  const numberSVG = 21
+  const currentColor :string= dark ? "white" : "black"
+  const numberSVG : number = 21
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -15,7 +21,6 @@ function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data);
         setMenuItems(data);
       } catch (error) {
         console.log(error);
@@ -29,7 +34,7 @@ function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
     <div className="d-flex justify-content-center align-items-center header-container">
       <Row className="d-flex justify-content-between p-3 glass-blur">
         <Col xs={6} className="d-flex justify-content-between">
-          {menuItems.map((item) => (
+          {menuItems.map((item:menuItem) => (
             <div className="d-flex position-relative navbar-brand" >
               <a
                 key={item.title}
@@ -43,8 +48,8 @@ function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
                     const svg = el.querySelector("svg");
                     if (svg) {
                       svg.setAttribute("fill", currentColor);
-                      svg.setAttribute("width", numberSVG);
-                      svg.setAttribute("height", numberSVG);
+                      svg.setAttribute("width", `${numberSVG}`);
+                      svg.setAttribute("height", `${numberSVG}`);
                     }
                   }
                 }}

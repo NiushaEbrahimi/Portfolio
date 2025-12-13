@@ -57,12 +57,17 @@
 
 .scroll_item {
   background-color: var(--color-6) !important;
-  /* min-width: 120px; */
-  padding: 15px 20px;
   border-radius: 8px;
   min-height: 40vh;
   min-width: 20vw;
   max-width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll_item > img{
+  border-radius: 0.6rem;
 }
 
 @keyframes infiniteScroll {
@@ -87,11 +92,6 @@
 }
 
 .scale_box{
-    /* border-left: 2px solid rgba(255, 255, 255, 0.35);
-    border-right: 2px solid rgba(255, 255, 255, 0.35);
-    border-top: 2px solid rgba(255, 255, 255, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    background: linear-gradient(rgba(255, 255, 255, 0.07) 0%, transparent 30%); */
     background: linear-gradient(rgba(156, 196, 255, 0.1) 0%, rgba(156, 195, 255, 0.03) 100%);
     height: 70%;
     box-shadow: rgba(31, 120, 255, 0.72) 0.180656px -0.421531px 0.458612px -1.25px inset, rgba(31, 120, 255, 0.64) 0.68656px -1.60197px 1.7429px -2.5px inset, rgba(31, 120, 255, 0.25) 3px -7px 7.61577px -3.75px inset, rgba(156, 195, 255, 0.14) -0.301094px -0.48175px 0.568102px -1.25px inset, rgba(156, 195, 255, 0.13) -1.14427px -1.83083px 2.159px -2.5px inset, rgba(156, 195, 255, 0.05) -5px -8px 9.43398px -3.75px inset;
@@ -212,13 +212,13 @@
   position: absolute;
   rotate: -20deg;
   bottom: 0;
-  left: 10%;
+  left: 15%;
   animation: jelly 4.5s ease-in-out infinite;
 }
 
 .coffeeCup{
   top: 0;
-  right: 0;
+  right: 10%;
   width: 15%;
   rotate: 10deg;
   position: absolute;
@@ -235,4 +235,16 @@
   100% {
     transform: translateY(0px) rotate(-10deg);
   }
+}
+
+
+
+
+.aboutTitle {
+  font-size: 4rem;
+  background-image: linear-gradient(0deg, #9e2166 0%, #3861b8 80.7661%);
+  font-weight:800;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }

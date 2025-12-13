@@ -7,6 +7,7 @@
     align-items: center;
     width: 100%;
     min-height: 20vh;
+    color: white;
 }
 .circle_1 ,.circle_2{
     background-color: transparent;
@@ -16,15 +17,19 @@
     top: 20%;
 }
 .circle_1{
+    margin-top: 1vh;
     width: 60%;
     height: 50%;
     background-color: var(--color-1);
     z-index: 100;
-    margin-top: 1vh;
+}
+.circle_1 > span > svg{
+    color: white;
 }
 
+
 .circle_2{
-    --circle-color : var(--color-2);
+    --circle-color : var(--color-8);
     z-index:30;
     width: 70%;
     height: 60%;

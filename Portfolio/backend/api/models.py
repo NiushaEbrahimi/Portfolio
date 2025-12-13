@@ -2,6 +2,7 @@ from django.db import models
 
 class Technologies(models.Model):
     techName = models.CharField(max_length=50)
+    svg_icon = models.TextField(null=True, blank=True)
     percent = models.PositiveIntegerField()
     category = models.CharField(max_length=50)
 

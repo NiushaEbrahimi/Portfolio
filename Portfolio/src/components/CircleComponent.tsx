@@ -1,17 +1,30 @@
 import styles from "../assets/css/Home/circle.module.css"
 import React from "react"
 
-function CircleComponent({percent, name, colorCircle}:{percent:number, name:string, colorCircle:string}) {
+function CircleComponent({percent, IconSvg}:{percent:number, IconSvg:string }) {
+    const currentColor = "white"
     return(
         <div className={styles.circle}>
             <div
                 className={styles.circle_1}
-            ></div>
+            >
+                <span
+                    className="h-100 d-flex justify-content-center align-items-center"
+                    dangerouslySetInnerHTML={{ __html: IconSvg }}
+                    ref={(el) => {
+                    if (el) {
+                        const svg = el.querySelector("svg");
+                        if (svg) {
+                            svg.setAttribute("fill", currentColor);
+                        }
+                    }
+                    }}
+                />
+            </div>
             <div 
                 className={styles.circle_2}
-                style={{ "--target-angle": `${percent}%`, "--circle-color" : `${colorCircle}` } as React.CSSProperties}
+                style={{ "--target-angle": `${percent}%` } as React.CSSProperties}
             ></div>
-            {name}
         </div>
     )
 }

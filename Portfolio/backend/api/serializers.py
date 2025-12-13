@@ -4,7 +4,7 @@ from .models import Technologies, MenuItem
 class TechSerializer(serializers.ModelSerializer):
     class Meta:
         model = Technologies
-        fields = ['id', 'techName', 'percent', 'category']
+        fields = ['id', 'techName', 'svg_icon', 'percent', 'category']
 
 class MenuSerializer(serializers.ModelSerializer):
     class Meta:

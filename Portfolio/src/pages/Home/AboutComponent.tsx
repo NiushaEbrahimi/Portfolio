@@ -2,12 +2,13 @@ import { Container, Row } from "react-bootstrap";
 import styles from "../../assets/css/Home/home.module.css"
 import { useEffect } from "react";
 import { useIntersectionObserver } from "@uidotdev/usehooks";
-import imageDeveloper from "../../../public/images/developer.PNG"
+import imageDeveloper from "../../../public/images/developer.png"
 import headsetImage from "../../../public/images/headset.png"
 import coffeeCup from "../../../public/images/coffeeCup.png"
 import stylesHome from "../../assets/css/Home/home.module.css"
 
-function AboutComponent({ dark }: { dark: boolean}) {
+// function AboutComponent({ dark }: { dark: boolean}) {
+function AboutComponent() {
     const [ref, entry] = useIntersectionObserver({
             threshold: 0.2,
             root: null,
@@ -16,7 +17,6 @@ function AboutComponent({ dark }: { dark: boolean}) {
     useEffect(()=>{
         if( entry?.isIntersecting){
             document.querySelector("#about")?.classList.add("active")
-            console.log("hello")
         }else{
             document.querySelector("#about")?.classList.remove("active")
         }
@@ -30,17 +30,16 @@ function AboutComponent({ dark }: { dark: boolean}) {
             <Row 
                 className={`d-flex justify-content-start p-5 rounded-5 ${styles.scale_box}`}
                 id="scaleBox"
-                style={{backgroundColor : dark ?  "transparent" : "var(--color-3)" , 
-                    color : dark ? "var(--color-6)" : "var(--color-1)"
-                }}
+                // style={{backgroundColor : dark ?  "transparent" : "var(--color-3)" , 
+                //     color : dark ? "var(--color-6)" : "var(--color-1)"
+                // }}
             >
                 <Container className="d-flex ">
                 <div className="p-2 w-100" style={{flex : 1 }}>
-                    <h1 className="mb-3">
-                        About
-                        <span style={{color:"var(--color-7)"}}>Me</span>
+                    <h1 className={stylesHome.aboutTitle}>
+                        About Me
                     </h1>
-                    <p>
+                    <p className="fs-4" style={{fontFamily : "Mona Sans", lineHeight : "2.5rem" , color : "rgba(255,255,255,0.4)"}}>
                         I'm a <span style={{color:"var(--color-8)"}}>frontend </span>
                         developer and Computer Engineer student 
                         with a strong passion for building clean, modern, and

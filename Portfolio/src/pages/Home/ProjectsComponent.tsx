@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 type StylesModule = { [key: string]: string };
 
-function ProjectsComponent({stylesModule}: {stylesModule: StylesModule,dark:boolean}) {
+function ProjectsComponent({stylesModule}: {stylesModule: StylesModule}) {
     const [ref, entry] = useIntersectionObserver({
             threshold: 0,
             root: null,
@@ -29,28 +29,28 @@ function ProjectsComponent({stylesModule}: {stylesModule: StylesModule,dark:bool
             <Container className={`vh-100 d-flex justify-content-center align-items-center ${stylesModule.projects_container}`} id="projects-page">
                 <div className={`overflow-hidden ${stylesModule.scroll_container_wrapper}`}>
                     <div className={`"d-flex flex-row g-5 justify-content-center align-items-center text-center ${stylesModule.scroll_container}`}>
-                        <div className={`p-2 rounded-4 ${stylesModule.scroll_item}`}>
+                        <div className={stylesModule.scroll_item}>
                             <img src={image1} style={{width:"100%" , height:"auto"}}/>
                         </div>
-                        <div className={`p-2 rounded-4 ${stylesModule.scroll_item}`}>
+                        <div className={stylesModule.scroll_item}>
                             <img src={image2} style={{width:"100%" , height:"auto"}}/>
                         </div>
-                        <div className={`p-2 rounded-4 ${stylesModule.scroll_item}`}> 
+                        <div className={stylesModule.scroll_item}> 
                             <img src={image3} style={{width:"100%" , height:"auto"}}/>
                         </div>
-                        <div className={`p-2 rounded-4 ${stylesModule.scroll_item}`}> 
+                        <div className={stylesModule.scroll_item}>
                             <img src={image4} style={{width:"100%" , height:"auto"}}/>
                         </div>
-                        <div className={`p-2 rounded-4 ${stylesModule.scroll_item}`}>
+                        <div className={stylesModule.scroll_item}>
                             <img src={image1} style={{width:"100%" , height:"auto"}}/>
                         </div>
-                        <div className={`p-2 rounded-4 ${stylesModule.scroll_item}`}>
+                        <div className={stylesModule.scroll_item}>
                             <img src={image2} style={{width:"100%" , height:"auto"}}/>
                         </div>
-                        <div className={`p-2 rounded-4 ${stylesModule.scroll_item}`}> 
+                        <div className={stylesModule.scroll_item}> 
                             <img src={image3} style={{width:"100%" , height:"auto"}}/>
                         </div>
-                        <div className={`p-2 rounded-4 ${stylesModule.scroll_item}`}> 
+                        <div className={stylesModule.scroll_item}> 
                             <img src={image4} style={{width:"100%" , height:"auto"}}/>
                         </div>
                     </div>
