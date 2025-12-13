@@ -13,6 +13,7 @@ function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
   const [menuItems, setMenuItems] = useState([]);
   const currentColor :string= dark ? "white" : "black"
   const numberSVG : number = 21
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -32,8 +33,8 @@ function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
 
   return (
     <div className="d-flex justify-content-center align-items-center header-container">
-      <Row className="d-flex justify-content-between p-3 glass-blur">
-        <Col xs={6} className="d-flex justify-content-between">
+      <Row className="d-flex justify-content-center justify-content-sm-between p-3 glass-blur" style={{backgroundColor : `${dark ? "" : "var(--color-4)"}`}}>
+        <Col xs={9} md={6} lg={6} className="d-flex justify-content-between">
           {menuItems.map((item:menuItem) => (
             <div className="d-flex position-relative navbar-brand" >
               <a
@@ -59,7 +60,7 @@ function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
           ))}
         </Col>
 
-        <Col xs={6} className="d-flex justify-content-end">
+        <Col xs={3} md={6} lg={6} className="d-flex justify-content-end">
           <Form className="d-flex align-items-center">
             <Form.Check
               className="theme-switch d-flex align-items-center"
@@ -68,7 +69,11 @@ function Headers({ dark, toggle }: { dark: boolean; toggle: () => void }) {
               id="themeSwitch"
               checked={dark}
               onChange={toggle}
-              label={dark ? "Dark Mode" : "Light Mode"}
+              label={
+                <span className="d-none d-sm-inline">
+                  {dark ? "Dark Mode" : "Light Mode"}
+                </span>
+              }
             />
           </Form>
         </Col>

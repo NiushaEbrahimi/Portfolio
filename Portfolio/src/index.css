@@ -8,8 +8,14 @@
   --color-text-white : #e6f1ff;
 
   --color-1: black;
+  --color-2: #ffeff7;
+  --color-3: #e9f2ff;
+  --color-4: #4572d434;
+  --color-5: #ffcde9;
+  --color-6: #75acff;
+  --color-7: #29deee;
   --color-8: #64ffda;
-
+  --color-9 : #97c1ff;
 }
 
 *{
@@ -22,11 +28,17 @@ body{
   margin: 0;
   color: var(--color-black) !important;
   transition: background-color 0.5s ease;
-  background-color: var(--color-5) !important;
+  background-color: var(--color-3) !important;
 }
 
 .dark-mode{
   --color-1: black;
+  --color-2: #9cc4ff1a;
+  --color-3: #9cc3ff08;
+  --color-4: #1f78ffb8;
+  --color-5: #9e2166;
+  --color-6: #3861b8;
+  --color-7: #29deee;
   --color-8: #64ffda;
   background-color: var(--color-1) !important;
   color: var(--color-text-white) !important;

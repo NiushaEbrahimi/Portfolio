@@ -20,7 +20,7 @@ export default function FlipCard({category,contentComponent}:{category:string,co
       <section className="flip-face front shadow text-center">
         <div>
           <h4>{category}</h4>
-          <div className="d-flex flex-wrap align-items-center" style={{justifyContent:"space-around"}}>
+          <div className="d-flex flex-wrap align-items-center" style={{justifyContent:"space-around", rowGap : "3vh", marginTop : "3vh"}}>
             {contentComponent.map((item:TechItem) => (
               // <CircleComponent
               //   key={item.id}
@@ -35,7 +35,8 @@ export default function FlipCard({category,contentComponent}:{category:string,co
             ))}
           </div>
         </div>
-        <div>
+        {/* TODO: impelement this later 
+        <div style={{display:"none"}}>
           <button 
               className={stylesHome.flippButton}
               onClick={() => setFlipped(true)}>
@@ -47,6 +48,7 @@ export default function FlipCard({category,contentComponent}:{category:string,co
             </span>
           </button>
         </div>
+        */}
       </section>
 
       

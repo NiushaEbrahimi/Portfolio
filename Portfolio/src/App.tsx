@@ -29,7 +29,7 @@ function App() {
           </Route>
 
         </Routes>
-        <Footer/>
+        <Footer dark={dark}/>
       </BrowserRouter>
     </ThemeContext.Provider>
   );

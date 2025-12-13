@@ -7,8 +7,7 @@ import headsetImage from "../../../public/images/headset.png"
 import coffeeCup from "../../../public/images/coffeeCup.png"
 import stylesHome from "../../assets/css/Home/home.module.css"
 
-// function AboutComponent({ dark }: { dark: boolean}) {
-function AboutComponent() {
+function AboutComponent({ dark }: { dark: boolean}) {
     const [ref, entry] = useIntersectionObserver({
             threshold: 0.2,
             root: null,
@@ -30,15 +29,12 @@ function AboutComponent() {
             <Row 
                 className={`p-5 rounded-5 ${styles.scale_box}`}
                 id="scaleBox"
-                // style={{backgroundColor : dark ?  "transparent" : "var(--color-3)" , 
-                //     color : dark ? "var(--color-6)" : "var(--color-1)"
-                // }}
             >
-                <Col xs={12} md={12} lg={6} className="p-2 ">
-                    <h1 className={stylesHome.aboutTitle}>
+                <Col xs={12} md={12} lg={6} className="p-2" >
+                    <h1 className={stylesHome.mainTitle}>
                         About Me
                     </h1>
-                    <p className="fs-4" style={{fontFamily : "Mona Sans", lineHeight : "2.5rem" , color : "rgba(255,255,255,0.4)"}}>
+                    <p className={stylesHome.explanation} style={{fontFamily : "Mona Sans", lineHeight : "2.5rem" , color : `${dark ?"rgba(255,255,255,0.4)":"rgba(0,0,0,0.6)"}`}}>
                         I'm a <span style={{color:"var(--color-8)"}}>frontend </span>
                         developer and Computer Engineer student 
                         with a strong passion for building clean, modern, and

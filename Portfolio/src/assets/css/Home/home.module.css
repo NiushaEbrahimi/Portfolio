@@ -32,6 +32,7 @@
     width: 100vw !important;
     padding: 2vh 5vw;
     row-gap: 20vh;
+    min-height: 70vh;
 }
 
 .scroll_container_wrapper {
@@ -53,10 +54,11 @@
   align-items: center;
   text-align: center;
   animation: infiniteScroll 20s linear infinite;
+  transition: transform 0.3s ease;
 }
 
 .scroll_item {
-  background-color: var(--color-6) !important;
+  background-color: transparent;
   border-radius: 8px;
   min-height: 40vh;
   min-width: 20vw;
@@ -87,13 +89,9 @@
   }
 }
 
-.scroll-container {
-  transition: transform 0.3s ease;
-}
-
 .scale_box{
-    background: linear-gradient(rgba(156, 196, 255, 0.1) 0%, rgba(156, 195, 255, 0.03) 100%);
-    box-shadow: rgba(31, 120, 255, 0.72) 0.180656px -0.421531px 0.458612px -1.25px inset, rgba(31, 120, 255, 0.64) 0.68656px -1.60197px 1.7429px -2.5px inset, rgba(31, 120, 255, 0.25) 3px -7px 7.61577px -3.75px inset, rgba(156, 195, 255, 0.14) -0.301094px -0.48175px 0.568102px -1.25px inset, rgba(156, 195, 255, 0.13) -1.14427px -1.83083px 2.159px -2.5px inset, rgba(156, 195, 255, 0.05) -5px -8px 9.43398px -3.75px inset;
+    background: linear-gradient(var(--color-2) 0%, var(--color-3) 100%);
+    box-shadow: var(--color-4) 0.180656px -0.421531px 0.458612px -1.25px inset, rgba(31, 120, 255, 0.64) 0.68656px -1.60197px 1.7429px -2.5px inset, rgba(31, 120, 255, 0.25) 3px -7px 7.61577px -3.75px inset, rgba(156, 195, 255, 0.14) -0.301094px -0.48175px 0.568102px -1.25px inset, rgba(156, 195, 255, 0.13) -1.14427px -1.83083px 2.159px -2.5px inset, rgba(156, 195, 255, 0.05) -5px -8px 9.43398px -3.75px inset;
 }
 
 
@@ -142,7 +140,7 @@
 .folderOuterContainer , .folderOuterContainerWhite{
   width: 54%;
   height: 85%;
-  background: linear-gradient( #29deee 10%, #16727a);
+  background: linear-gradient( var(--color-7) 10%, #16727a);
   border-radius: 1rem;
   position: absolute;
   bottom: 0%;
@@ -234,9 +232,9 @@
 }
 
 
-.aboutTitle {
+.mainTitle {
   font-size: 4rem;
-  background-image: linear-gradient(0deg, #9e2166 0%, #3861b8 80.7661%);
+  background-image: linear-gradient(0deg, var(--color-5) 0%, var(--color-6) 80.7661%);
   font-weight:800;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -244,22 +242,21 @@
 }
 
 .flippButton{
-  background: linear-gradient(rgba(156, 196, 255, 0.1) 0%, rgba(156, 195, 255, 0.03) 100%);
+  background: linear-gradient(var(--color-2) 0%, var(--color-3) 100%);
   background-color:rgba(4, 25, 57, 0.72);
   color: white;
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: rgba(31, 120, 255, 0.72) 0.180656px -0.421531px 0.458612px -1.25px inset, rgba(31, 120, 255, 0.64) 0.68656px -1.60197px 1.7429px -2.5px inset, rgba(31, 120, 255, 0.25) 3px -7px 7.61577px -3.75px inset, rgba(156, 195, 255, 0.14) -0.301094px -0.48175px 0.568102px -1.25px inset, rgba(156, 195, 255, 0.13) -1.14427px -1.83083px 2.159px -2.5px inset, rgba(156, 195, 255, 0.05) -5px -8px 9.43398px -3.75px inset;
+  box-shadow: var(--color-4) 0.180656px -0.421531px 0.458612px -1.25px inset, rgba(31, 120, 255, 0.64) 0.68656px -1.60197px 1.7429px -2.5px inset, rgba(31, 120, 255, 0.25) 3px -7px 7.61577px -3.75px inset, rgba(156, 195, 255, 0.14) -0.301094px -0.48175px 0.568102px -1.25px inset, rgba(156, 195, 255, 0.13) -1.14427px -1.83083px 2.159px -2.5px inset, rgba(156, 195, 255, 0.05) -5px -8px 9.43398px -3.75px inset;
   transform: all;
   transition-timing-function: ease-in-out;
   transition-duration: 400ms;
-
 }
 
 
 .flippButton:hover , .flippButton:active , .flippButton:focus{
   background-color:rgba(2, 15, 32, 0.9);
-  box-shadow: rgb(31, 121, 255) 0.180656px -0.421531px 0.458612px -1.25px inset, rgb(31, 121, 255) 0.68656px -1.60197px 1.7429px -2.5px inset, rgb(31, 121, 255) 3px -7px 7.61577px -3.75px inset, rgba(156, 196, 255, 0.425) -0.301094px -0.48175px 0.568102px -1.25px inset, rgba(156, 195, 255, 0.13) -1.14427px -1.83083px 2.159px -2.5px inset, rgba(156, 195, 255, 0.05) -5px -8px 9.43398px -3.75px inset;
+  box-shadow: var(--color-4) 0.180656px -0.421531px 0.458612px -1.25px inset, rgb(31, 121, 255) 0.68656px -1.60197px 1.7429px -2.5px inset, rgb(31, 121, 255) 3px -7px 7.61577px -3.75px inset, rgba(156, 196, 255, 0.425) -0.301094px -0.48175px 0.568102px -1.25px inset, rgba(156, 195, 255, 0.13) -1.14427px -1.83083px 2.159px -2.5px inset, rgba(156, 195, 255, 0.05) -5px -8px 9.43398px -3.75px inset;
 }
 
 .flippButton:hover .spanSVG{
@@ -270,6 +267,18 @@
 }
 .spanSVG , .spanSVGBack{
   transform: rotateZ(0deg);
+}
+.explanation{
+  font-size: 1.4rem;
+}
+
+.projectsLink{
+  color: var(--color-7);
+  font-size: 1rem;
+}
+
+.projectsLink > svg{
+  width: 1rem ;
 }
 
 @keyframes rotateSvg {
@@ -282,5 +291,48 @@
 }
 
 @media (max-width: 768px)  {
-  
+  .mainTitle{
+    font-size: 3rem;
+  }
+  .explanation{
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1240px)  {
+  .projects_container{
+    width: 100vw !important;
+    padding: 2vh 0vw !important;
+    row-gap: 1vh !important;
+  }
+  .scroll_container_wrapper {
+    margin-left: 45vw !important;
+    min-width: 120vw !important; 
+  } 
+}
+@media (max-width: 860px)  {
+  .scroll_container_wrapper {
+    margin-left: 30vw !important;
+    transform: perspective(1000px) rotateY(50deg) skewX(-5deg);
+  }
+  .scroll_item {
+    min-width: 40vw;
+  }
+}
+@media (max-width: 690px)  {
+  .scroll_container_wrapper {
+    margin-left: 20vw !important;
+    min-width: 140vw !important; 
+  }
+}
+@media (max-width: 520px)  {
+  .scroll_item {
+    min-width: 50vw;
+  }
+  .projectsLink{
+    font-size: 1rem;
+  }
+  .projectsLink > svg{
+    width: 20px ;
+  }
 }

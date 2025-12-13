@@ -5,7 +5,6 @@ import stylesHome from "../../assets/css/Home/home.module.css"
 import techBackground from "../../../public/images/techBackground.webp"
 import TechCards from "../../pages/Home/TechCards.tsx";
 import { useEffect,useState } from "react";
-// import ChainScroll from "./blurredband.tsx";
 
 interface TechItem {
   id: number;
@@ -30,6 +29,14 @@ function Technologies() {
         .catch(console.error);
     }, []);
 
+    useEffect(()=>{
+        if( entry?.isIntersecting){
+            document.querySelector("#tools")?.classList.add("active")
+        }else{
+            document.querySelector("#tools")?.classList.remove("active")
+        }
+    },[entry?.isIntersecting])
+
     const webTech = data.filter(t => t.category === "web");
     const machineVisionTech = data.filter(t => t.category === "machine vision");
     
@@ -37,16 +44,16 @@ function Technologies() {
         <div
             id="tools-page" 
             ref={ref} 
-            className={`vh-100 mt-5 d-flex flex-column justify-content-center align-items-center text-center ${ entry?.isIntersecting ? styles.fadeIn : ""}`}
+            className={`mt-5 d-flex flex-column justify-content-center align-items-center text-center ${ entry?.isIntersecting ? styles.fadeIn : ""}`}
         >
             <div className={stylesHome.techBackgroundConatiner}>
                 <img className="w-100 h-100" src={techBackground} />
             </div>
             {entry?.isIntersecting ? (
-                <Container className="d-flex justify-content-center align-items-center flex-column">
-                    <h2 className={stylesHome.aboutTitle}>Technologies</h2>
+                <Container className="d-flex justify-content-center align-items-center flex-column" style={{gap : "2vh"}}>
+                    <h2 className={stylesHome.mainTitle}>Technologies</h2>
                     <p>these Technologies have been fully self taught to myself</p>
-                    <Row className="w-100 d-flex justify-content-center align-items-center" >
+                    <Row className="w-100 d-flex justify-content-center align-items-center" style={{marginTop : "5vh" , rowGap : "10vh"}}>
                         <Col xs={12} md={12} lg={6} style={{ maxWidth : "450px"}} >
                             <TechCards category={"web"} contentComponent={webTech} />
                         </Col>
@@ -54,9 +61,6 @@ function Technologies() {
                             <TechCards category={"machine vision"} contentComponent={machineVisionTech} />
                         </Col>
                     </Row>
-                    {/* <Row style={{maxWidth : "40vw"}}>
-                        <ChainScroll/>
-                    </Row> */}
                 </Container>
             ) : ""}
         </div>

@@ -88,16 +88,18 @@ function HomeComponent({dark}:{dark:boolean}) {
     return (
         <>
             <HomesFirstSection styles={styles} />
+            <div style={{ height: "40vh" }}></div>
             <AboutComponent dark={dark} />
 
-            <div style={{ height: "20vh" }}></div>
+            <div style={{ height: "40vh" }}></div>
             <ProjectsComponent stylesModule={styles} />
 
-            <div style={{ height: "20vh" }}></div>
+            <div style={{ height: "60vh" }}></div>
             <Technologies />
 
-            <div style={{ height: "20vh" }}></div>
+            <div style={{ height: "40vh" }}></div>
             <Resume/>
+            <div style={{ height: "40vh" }}></div>
         </>
     );
 }
