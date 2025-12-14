@@ -163,6 +163,12 @@
   left: 5%;
   background-color: var(--green-dark);
 }
+@media (max-width: 1110px)  {
+  .githubDecor1{
+    top: 10%;
+    left: 10%;
+  }
+}
 
 .githubContribution:hover .githubDecor1{
   scale: 1.4;

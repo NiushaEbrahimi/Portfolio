@@ -44,10 +44,10 @@ export default function Resume() {
   };
 
     return(
-        <Container ref={ref} className="w-100 vh-100 d-flex justify-content-center align-items-center" style={{padding : "0vh 7vw"}}>
-            <Container id="resume-page" className="w-100 h-100 d-flex justify-content-center align-items-center gap-4" style={{position : "relative"}}>
+        <Container ref={ref} className="w-100 vh-100 d-flex justify-content-center align-items-center " style={{padding : "0vh 7vw"}}>
+            <Container id="resume-page" className="w-100 h-100 d-flex justify-content-center align-items-center gap-4 p-md-0" style={{position : "relative"}}>
             {entry?.isIntersecting && <>
-              <Container className="w-100 h-100 d-flex justify-content-center align-items-center flex-column " style={{gap:"2vh"}}>
+              <Container className="w-100 h-100 d-flex justify-content-center align-items-center flex-column p-md-0" style={{gap:"2vh"}}>
                 <h2 className={stylesHome.mainTitle}>Resume</h2>
                 <p>Check out my resume and github, getting to know more about me and my work.</p>
                 <Container style={{marginTop : "15vh"}}>

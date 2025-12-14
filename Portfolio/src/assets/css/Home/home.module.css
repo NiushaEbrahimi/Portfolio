@@ -309,6 +309,27 @@
     margin-left: 45vw !important;
     min-width: 120vw !important; 
   } 
+  .folderOuterContainer , .folderOuterContainerWhite{
+    width: 54%;
+    height: 65%;
+  }
+  .resumeContainer{
+    transform: translateY(7vh);
+  }
+}
+@media (max-width: 992px)  {
+  .folderOuterContainer , .folderOuterContainerWhite{
+    width: 80%;
+  }
+   .folderOuterContainerWhite{
+    bottom: 7%;
+   }
+  .resumeContainer{
+    transform: translateY(7vh);
+  }
+  .folderContainer{
+    width: 90%;
+  }
 }
 @media (max-width: 860px)  {
   .scroll_container_wrapper {
