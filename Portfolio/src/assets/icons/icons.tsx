@@ -1,6 +1,6 @@
 import reactImg from "./React.png";
 import pythonImg from "./python.png";
-import bootstrapImg from "./bootstrapMui.png";
+import bootstrapImg from "./bootstrapMUI.png";
 import django from "./django.png";
 import djangoRest from "./django rest.png"
 import htmlCss from "./html css.png";
