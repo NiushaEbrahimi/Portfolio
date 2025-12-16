@@ -1,7 +1,7 @@
 import { useState } from "react";
 // import CircleComponent from "../../components/CircleComponent";
 import stylesHome from "../../assets/css/Home/home.module.css"
-import { imageMap } from "../../../public/icons/icons";
+import { imageMap } from "../../assets/icons/icons";
 import "../../assets/css/Home/flip-cart.css"
 
 interface TechItem {

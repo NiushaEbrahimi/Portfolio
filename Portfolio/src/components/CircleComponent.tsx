@@ -1,6 +1,6 @@
 import styles from "../assets/css/Home/circle.module.css"
 import React from "react"
-import { imageMap } from "../../public/icons/icons.tsx";
+import { imageMap } from "../assets/icons/icons.tsx";
 
 function CircleComponent({percent,name}:{percent:number, name:string }) {
     // const currentColor = "white"
