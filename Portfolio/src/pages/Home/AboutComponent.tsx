@@ -27,6 +27,9 @@ function AboutComponent({ dark }: { dark: boolean}) {
             ref={ref}
         >
             <Row 
+                style={{
+                    background : `${dark ? "linear-gradient(var(--color-2) 0%, var(--color-3) 100%)" : "white"}`
+                    }}
                 className={`p-5 rounded-5 ${styles.scale_box}`}
                 id="scaleBox"
             >
@@ -34,7 +37,7 @@ function AboutComponent({ dark }: { dark: boolean}) {
                     <h1 className={stylesHome.mainTitle}>
                         About Me
                     </h1>
-                    <p className={stylesHome.explanation} style={{fontFamily : "Mona Sans", lineHeight : "2.5rem" , color : `${dark ?"rgba(255,255,255,0.4)":"rgba(0,0,0,0.6)"}`}}>
+                    <p className={stylesHome.explanation} style={{fontFamily : "Mona Sans", lineHeight : "2.5rem" , color : `${dark ?"rgba(255,255,255,0.4)":"rgba(0, 0, 0, 0.72)"}`}}>
                         I'm a <span style={{color:"var(--color-8)"}}>frontend </span>
                         developer and Computer Engineer student 
                         with a strong passion for building clean, modern, and

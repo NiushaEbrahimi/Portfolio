@@ -25,9 +25,9 @@ function ProjectsComponent({stylesModule}: {stylesModule: StylesModule}) {
         },[entry?.isIntersecting])
     return(
 
-        <Container ref={ref} className="mt-5 d-flex flex-column justify-content-center align-items-center text-center">
+        <Container ref={ref} className="mt-5 d-flex flex-column justify-content-center align-items-center text-center" id="projects-page">
             <h2 className={stylesHome.mainTitle}>Projects</h2>
-            <Container className={`d-flex justify-content-center align-items-center ${stylesModule.projects_container}`} id="projects-page">
+            <Container className={`d-flex justify-content-center align-items-center ${stylesModule.projects_container}`} >
                 <div className={`overflow-hidden ${stylesModule.scroll_container_wrapper}`}>
                     <div className={`"d-flex flex-row g-5 justify-content-center align-items-center text-center ${stylesModule.scroll_container}`}>
                         <div className={stylesModule.scroll_item}>

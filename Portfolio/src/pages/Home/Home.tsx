@@ -95,10 +95,14 @@ function HomeComponent({dark}:{dark:boolean}) {
             <ProjectsComponent stylesModule={styles} />
 
             <div style={{ height: "60vh" }}></div>
-            <Technologies />
+            <div id="tools-page" className="section-anchor" style={{minHeight : "100vh"}}>
+                <Technologies dark={dark}/>
+            </div>
 
             <div style={{ height: "40vh" }}></div>
-            <Resume/>
+            <div id="resume-page" className="section-anchor" style={{minHeight : "100vh"}}>
+            <Resume />
+            </div>
             <div style={{ height: "40vh" }}></div>
         </>
     );

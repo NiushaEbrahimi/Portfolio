@@ -101,7 +101,7 @@ const FALLBACK_TECH: TechItem[] = [
     }
 ]
 
-function Technologies() {
+function Technologies({dark}:{dark:boolean}) {
     const [ref, entry] = useIntersectionObserver({
         threshold: 0,
         root: null,
@@ -145,14 +145,13 @@ function Technologies() {
     
     return(
         <div
-            id="tools-page" 
             ref={ref} 
             className={`mt-5 d-flex flex-column justify-content-center align-items-center text-center ${ entry?.isIntersecting ? styles.fadeIn : ""}`}
         >
-            <div className={stylesHome.techBackgroundConatiner}>
+            {dark ? <div className={stylesHome.techBackgroundConatiner}>
                 <img className="w-100 h-100" src={techBackground} />
-            </div>
-            {entry?.isIntersecting ? (
+            </div> : ""}
+            
                 <Container className="d-flex justify-content-center align-items-center flex-column" style={{gap : "2vh"}}>
                     <h2 className={stylesHome.mainTitle}>Technologies</h2>
                     <p>these Technologies have been fully self taught to myself</p>
@@ -165,7 +164,6 @@ function Technologies() {
                         </Col>
                     </Row>
                 </Container>
-            ) : ""}
         </div>
     )
 }

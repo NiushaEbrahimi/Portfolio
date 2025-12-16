@@ -1,3 +1,4 @@
+
 .typingEffect {
     animation: type 1000ms forwards infinite;
 }
@@ -90,60 +91,74 @@
 }
 
 .scale_box{
-    background: linear-gradient(var(--color-2) 0%, var(--color-3) 100%);
     box-shadow: var(--color-4) 0.180656px -0.421531px 0.458612px -1.25px inset, rgba(31, 120, 255, 0.64) 0.68656px -1.60197px 1.7429px -2.5px inset, rgba(31, 120, 255, 0.25) 3px -7px 7.61577px -3.75px inset, rgba(156, 195, 255, 0.14) -0.301094px -0.48175px 0.568102px -1.25px inset, rgba(156, 195, 255, 0.13) -1.14427px -1.83083px 2.159px -2.5px inset, rgba(156, 195, 255, 0.05) -5px -8px 9.43398px -3.75px inset;
 }
 
 
-.downloadButton{
+.downloadButton {
   padding: 1rem;
   background-color: #29deee;
-  color:var(--color-2);
+  color: var(--color-2);
   border-radius: 1rem;
-  position : absolute;
-  translate  :-50% -50%;
-  top : 40%;
-  left : 50%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 100;
 }
 
 .folderContainer{
-  width: 60%;
+  width: 54%;
   position: absolute;
-  bottom: 0%;
+  bottom:0%;
   z-index: -100;
   transition: all;
   transition-duration: 600ms;
-  perspective: 1000px
+  perspective: 1000px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.resumeContainerMain{
+  width: 100%;
+  margin-top: 5vh;
 }
 
 .resumeContainer{
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, 0%);
   position: relative;
-  max-width: 15vw;
-  /* max-height: 40vh; */
+  max-width: 18vw;
   filter: blur(1px);
-  /* transform: translateY(-50vh); */
   transition: all;
   transition-duration: 600ms;
 }
 
 .resumeContainerParent:hover .resumeContainer{
-  transform: translateY(-10vh);
+  transform: translate(-50%,-7vh);
   filter: blur(0px);
 }
-.resumeContainerParent:hover .folderOuterContainer{
-  transform: rotateX(-40deg) translateY(5vh);
+.resumeContainerParent:hover .folderOuterContainer {
+  transform: rotateX(-40deg) translate(-50%, 5vh); /* ✅ Move down 5vh, keep centered */
 }
-.resumeContainerParent:hover  .folderOuterContainerWhite{
-  transform: rotateX(-40deg) translateY(5vh);
+
+.resumeContainerParent:hover .folderOuterContainerWhite {
+  transform: rotateX(-40deg) translate(-50%, 5vh); /* ✅ Same */
+}
+.resumeContainerParent:hover{
+  cursor: pointer;
 }
 .folderOuterContainer , .folderOuterContainerWhite{
-  width: 54%;
-  height: 85%;
+  width: 50%;
+  height: 65%;
   background: linear-gradient( var(--color-7) 10%, #16727a);
   border-radius: 1rem;
   position: absolute;
-  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  bottom: 5%;
   z-index: 100;
   transition: all;
   transition-duration: 600ms;
@@ -151,7 +166,7 @@
 .folderOuterContainerWhite{
   background: none;
   background-color: white;
-  bottom: 14%;
+  bottom: 19%;
   z-index: 90;
 }
 
@@ -277,8 +292,22 @@
   font-size: 1rem;
 }
 
+@keyframes jump-arrow {
+  0%{
+    transform: translateX(0px);
+  }
+  50%{
+    transform: translateX(-10px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+
 .projectsLink > svg{
+  margin-left: 2vw;
   width: 1rem ;
+  animation: jump-arrow 2s cubic-bezier(0.72, 0.6, 0.59, 1.14) infinite;
 }
 
 @keyframes rotateSvg {
@@ -300,35 +329,29 @@
 }
 
 @media (max-width: 1240px)  {
-  .projects_container{
-    width: 100vw !important;
-    padding: 2vh 0vw !important;
-    row-gap: 1vh !important;
-  }
-  .scroll_container_wrapper {
-    margin-left: 45vw !important;
-    min-width: 120vw !important; 
-  } 
   .folderOuterContainer , .folderOuterContainerWhite{
-    width: 54%;
-    height: 65%;
+    width: 44%;
+    height: 53%;
   }
   .resumeContainer{
-    transform: translateY(7vh);
+    bottom: 0%;
+    transform: translate(-50%, 30%);
+  }
+  .resumeContainerParent:hover .resumeContainer{
+    transform: translate(-50%,1vh);
   }
 }
 @media (max-width: 992px)  {
   .folderOuterContainer , .folderOuterContainerWhite{
-    width: 80%;
+    width: 44%;
+    height: 50%;
   }
-   .folderOuterContainerWhite{
-    bottom: 7%;
-   }
   .resumeContainer{
-    transform: translateY(7vh);
+    bottom: 0%;
+    transform: translate(-50%, 30%);
   }
-  .folderContainer{
-    width: 90%;
+  .resumeContainerParent:hover .resumeContainer{
+    transform: translate(-50%,1vh);
   }
 }
 @media (max-width: 860px)  {
@@ -356,4 +379,110 @@
   .projectsLink > svg{
     width: 20px ;
   }
+}
+
+:root {
+  --radius: 50%;
+  --border: 4px;
+}
+
+.buttonCall , .buttonMail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: glow linear 2s infinite;
+}
+.buttonMail , .buttonMail::before {  
+  animation-delay: 400ms;
+}
+
+
+.buttonCall::before , .buttonMail::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  aspect-ratio: 1/1;
+  width: 150%;
+  height: auto;
+  border-radius: 50%;
+  background: conic-gradient(#fff 0%, #000 3%, #409 60%, #fff 100%);
+  animation: spin ease-in-out 2s infinite;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.buttonCall::after , .buttonMail::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - var(--border));
+  height: calc(100% - var(--border));
+  background: #000; 
+  transform: translate(-50%, -50%);
+  border-radius: var(--radius);
+  backdrop-filter: blur(2px); 
+  z-index: 1;
+}
+
+.buttonCall span , .buttonMail span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  font-family: "Geo", monospace, sans-serif;
+  font-size: min(12vh, 6vw);
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+}
+
+.buttonCall svg , .buttonMail svg {
+  width: 60%;
+  height: auto;
+  max-width: 100%;
+  fill: white;
+}
+
+.socialContainer{
+  width: 5vw;
+  height: 5vw;
+  max-width: 60px;
+  max-height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 400ms;
+}
+
+.socialContainer:hover {
+  scale: 1.1;
+}
+
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 0 0 transparent; }
+  25% { box-shadow: 0 0 0 15px #4094; }
+  50% { box-shadow: 0 0 0 30px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
 }
