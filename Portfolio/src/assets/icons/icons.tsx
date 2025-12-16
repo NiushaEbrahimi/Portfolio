@@ -1,6 +1,6 @@
 import reactImg from "./React.png";
 import pythonImg from "./python.png";
-import bootstrapImg from "./bootstrapMUI.png";
+import bootstrap from "./bootstrapMUI.png";
 import django from "./django.png";
 import djangoRest from "./django rest.png"
 import htmlCss from "./html css.png";
@@ -14,7 +14,7 @@ import wordpress from "./wordpress.png";
 export const imageMap: Record<string, string> = {
     React: reactImg,
     Python: pythonImg,
-    BootstrapMUI : bootstrapImg,
+    BootstrapMUI : bootstrap,
     django : django,
     djangoRest : djangoRest,
     htmlCss : htmlCss,
