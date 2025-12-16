@@ -2,7 +2,7 @@ import styles from "../assets/css/Home/circle.module.css"
 import React from "react"
 import { imageMap } from "../../public/icons/icons.tsx";
 
-function CircleComponent({percent,name,IconSvg}:{percent:number, name:string, IconSvg:string }) {
+function CircleComponent({percent,name}:{percent:number, name:string }) {
     // const currentColor = "white"
     return(
         <div className={styles.circle}>

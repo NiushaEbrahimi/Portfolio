@@ -1,5 +1,5 @@
 import { useIntersectionObserver } from "@uidotdev/usehooks";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { useEffect } from "react";
 import { GitHubCalendar, type Activity } from "react-github-calendar";
 import styles from "../../assets/css/fade.module.css";
