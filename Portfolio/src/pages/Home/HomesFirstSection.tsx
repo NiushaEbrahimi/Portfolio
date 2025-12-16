@@ -31,7 +31,7 @@ function HomesFirstSection({styles} : {styles: StylesModule}) {
                 <Row className={`d-flex justify-content-center text-center ${stylesFade.fadeIn}`}>
                     <h1>Hi, <span className={stylesHome.mainTitle} >Niusha</span> Here.</h1>
                     <h6>I create stuff.</h6>
-                    <p><span className="change-word"></span><span className={styles.typingEffect}>|</span></p>
+                    <p><span className="change-word">Frontend Developer</span><span className={styles.typingEffect}>|</span></p>
                 </Row>
             </>}
         </Container>

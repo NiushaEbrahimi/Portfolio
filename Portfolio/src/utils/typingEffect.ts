@@ -1,7 +1,7 @@
 const LIST_OF_WORDS: string[] = [
-  "Frontend Developer",
   "Software Engineer",
   "Student at SRB.IAU",
+  "Frontend Developer",
 ];
 
 export default function changeWord(): () => void {

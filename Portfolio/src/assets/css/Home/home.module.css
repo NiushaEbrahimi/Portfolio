@@ -135,6 +135,11 @@
   transition: all;
   transition-duration: 600ms;
 }
+.resumeContainer > img { 
+  max-width: 18vw;
+  max-height: 40vh;
+  border-radius: 1rem;
+}
 
 .resumeContainerParent:hover .resumeContainer{
   transform: translate(-50%,-7vh);
@@ -342,33 +347,101 @@
   }
 }
 @media (max-width: 992px)  {
-  .folderOuterContainer , .folderOuterContainerWhite{
-    width: 44%;
+  .folderOuterContainer{
     height: 50%;
+    bottom: 2%;
+  }
+  .folderOuterContainerWhite{
+    height: 50%;
+    bottom: 7%;
   }
   .resumeContainer{
     bottom: 0%;
-    transform: translate(-50%, 30%);
+    transform: translate(-50%, 50%);
   }
   .resumeContainerParent:hover .resumeContainer{
     transform: translate(-50%,1vh);
   }
 }
-@media (max-width: 860px)  {
-  .scroll_container_wrapper {
-    margin-left: 30vw !important;
-    transform: perspective(1000px) rotateY(50deg) skewX(-5deg);
+@media (max-width: 900px)  {
+  .resumeContainer{
+    transform: translate(-50%, 70%);
   }
-  .scroll_item {
-    min-width: 40vw;
+}
+
+@media (max-width: 790px)  {
+  .resumeContainer{
+    transform: translate(-50%, 80%);
   }
+}
+@media (max-width: 768px)  {
+  .folderContainer{
+    width: 40%;
+  }
+  .folderOuterContainer , .folderOuterContainerWhite{
+    width: 35%;
+    height: 70%;
+  }
+  .resumeContainer{
+    max-width: 30vw;
+    transform: translate(-50%, 25%);
+  }
+  .resumeContainer > img { 
+    max-width: 30vw;
+    }
 }
 @media (max-width: 690px)  {
-  .scroll_container_wrapper {
-    margin-left: 20vw !important;
-    min-width: 140vw !important; 
+  .folderOuterContainer , .folderOuterContainerWhite{
+    height: 60%;
+  }
+  .resumeContainer{
+    max-width: 30vw;
+    transform: translate(-50%, 45%);
   }
 }
+
+@media (max-width: 600px)  {
+  .folderContainer{
+    width: 50%;
+  }
+  .folderOuterContainer , .folderOuterContainerWhite{
+    width: 47%;
+    height: 60%;
+    bottom: 5%;
+  }
+  .folderOuterContainerWhite{
+    bottom: 10%;
+  }
+  .resumeContainer{
+    max-width: 30vw;
+    transform: translate(-50%, 45%);
+  }
+}
+
+@media (max-width: 500px)  {
+  .folderContainer{
+    width: 50%;
+  }
+  .folderOuterContainer , .folderOuterContainerWhite{
+    width: 44%;
+    height: 50%;
+    bottom: 0%;
+  }
+  .folderOuterContainerWhite{
+    bottom: 5%;
+  }
+  .resumeContainer{
+    max-width: 30vw;
+    transform: translate(-50%, 65%);
+  }
+}
+@media (max-width: 450px)  {
+  .resumeContainer{
+    max-width: 30vw;
+    transform: translate(-50%, 75%);
+  }
+}
+
 @media (max-width: 520px)  {
   .scroll_item {
     min-width: 50vw;

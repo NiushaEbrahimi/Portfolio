@@ -47,7 +47,7 @@ export default function Resume() {
   <div
     id="resume-page"
     ref={ref}
-    className="w-100 d-flex justify-content-center align-items-center"
+    className="d-flex justify-content-center align-items-center"
     style={{ padding: "0vh 6vw", minHeight: "100svh" }}
   >
     <div
@@ -67,7 +67,6 @@ export default function Resume() {
 
           <div className={stylesHome.resumeContainerMain}>
             <Row style={{ rowGap: "5vh" }}>
-              {/* Resume Card */}
               <Col
                 xs={12}
                 md={6}
@@ -81,11 +80,11 @@ export default function Resume() {
                     <img
                       src={resumeImage}
                       alt="Resume"
-                      style={{
-                        maxWidth: "18vw",
-                        maxHeight: "40vh",
-                        borderRadius: "1rem",
-                      }}
+                      // style={{
+                      //   maxWidth: "18vw",
+                      //   maxHeight: "40vh",
+                      //   borderRadius: "1rem",
+                      // }}
                     />
 
                     <button
