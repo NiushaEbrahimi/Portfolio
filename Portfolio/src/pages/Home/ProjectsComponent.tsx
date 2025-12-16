@@ -1,8 +1,8 @@
 import { Container } from "react-bootstrap";
-import image1 from "../../../public/images/CodePenDashboard.png"
-import image2 from "../../../public/images/PixlrClone.jpeg"
-import image3 from "../../../public/images/Dashboard-app-react-bootstrap.png"
-import image4 from "../../../public/images/CompuTech-wordpress.png"
+import image1 from "../../assets/images/CodePenDashboard.png"
+import image2 from "../../assets/images/PixlrClone.jpeg"
+import image3 from "../../assets/images/Dashboard-app-react-bootstrap.png"
+import image4 from "../../assets/images/CompuTech-wordpress.png"
 import { useIntersectionObserver } from "@uidotdev/usehooks";
 import { useEffect } from "react";
 import stylesHome from "../../assets/css/Home/home.module.css"

@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import { GitHubCalendar, type Activity } from "react-github-calendar";
 import styles from "../../assets/css/fade.module.css";
 import stylesHome from "../../assets/css/Home/home.module.css";
-import GithubLogo from "../../../public/images/GithubLogo.png";
-import resumeImage from "../../../public/images/ResumeImage.png";
+import GithubLogo from "../../assets/images/GithubLogo.png";
+import resumeImage from "../../assets/images/ResumeImage.png";
 import FolderIcon from "../../assets/images/folderIcon.png";
 import { Link } from "react-router-dom";
 

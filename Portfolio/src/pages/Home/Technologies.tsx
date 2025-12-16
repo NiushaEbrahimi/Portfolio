@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useIntersectionObserver } from "@uidotdev/usehooks";
 import styles from "../../assets/css/fade.module.css"
 import stylesHome from "../../assets/css/Home/home.module.css"
-import techBackground from "../../../public/images/techBackground.webp"
+import techBackground from "../../assets/images/techBackground.webp"
 import TechCards from "../../pages/Home/TechCards.tsx";
 import { useEffect,useState } from "react";
 

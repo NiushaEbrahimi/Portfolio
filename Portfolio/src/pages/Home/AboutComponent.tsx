@@ -2,9 +2,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import styles from "../../assets/css/Home/home.module.css"
 import { useEffect } from "react";
 import { useIntersectionObserver } from "@uidotdev/usehooks";
-import imageDeveloper from "../../../public/images/developer.png"
-import headsetImage from "../../../public/images/headset.png"
-import coffeeCup from "../../../public/images/coffeeCup.png"
+import imageDeveloper from "../../assets/images/developer.png"
+import headsetImage from "../../assets/images/headset.png"
+import coffeeCup from "../../assets/images/coffeeCup.png"
 import stylesHome from "../../assets/css/Home/home.module.css"
 
 function AboutComponent({ dark }: { dark: boolean}) {
