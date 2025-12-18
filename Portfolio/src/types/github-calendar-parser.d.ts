@@ -1,4 +1,3 @@
-declare module "github-calendar-parser" {
-  const parse: (svg: string) => unknown;
-  export default parse;
+declare module 'github-calendar-parser' {
+  export function parse(input: any): any;
 }

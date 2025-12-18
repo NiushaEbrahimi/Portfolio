@@ -10,7 +10,7 @@ import FolderIcon from "../../assets/images/folderIcon.png";
 import { Link } from "react-router-dom";
 
 // Require GitHubCalendarParser with 'any' type to avoid type errors
-const GitHubCalendarParser: any = require("github-calendar-parser");
+const GitHubCalendarParser: unknown = require("github-calendar-parser");
 
 export default function Resume() {
   const [ref, entry] = useIntersectionObserver({
