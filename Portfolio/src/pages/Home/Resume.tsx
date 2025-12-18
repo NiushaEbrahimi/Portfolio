@@ -16,7 +16,7 @@ export default function Resume() {
     rootMargin: "0px",
   });
 
-  const selectLastHalfYear = (contributions) => {
+  const selectLastHalfYear = (contributions: unknown[]): unknown[] => {
     const now = new Date();
     const sixMonthsAgo = new Date();
     sixMonthsAgo.setMonth(now.getMonth() - 6);
