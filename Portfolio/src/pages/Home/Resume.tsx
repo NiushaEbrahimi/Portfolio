@@ -9,6 +9,9 @@ import resumeImage from "../../assets/images/ResumeImage.png";
 import FolderIcon from "../../assets/images/folderIcon.png";
 import { Link } from "react-router-dom";
 
+// Require GitHubCalendarParser with 'any' type to avoid type errors
+const GitHubCalendarParser: any = require("github-calendar-parser");
+
 export default function Resume() {
   const [ref, entry] = useIntersectionObserver({
     threshold: 0,
@@ -21,7 +24,12 @@ export default function Resume() {
     const sixMonthsAgo = new Date();
     sixMonthsAgo.setMonth(now.getMonth() - 6);
 
-    return contributions.filter((activity) => {
+    // Use GitHubCalendarParser to parse the contributions if necessary
+    // For example, if you want to parse before filtering
+    const parsedContributions = GitHubCalendarParser.parse(contributions);
+
+    // Filter contributions to include only those from the last 6 months
+    return parsedContributions.filter((activity: Activity) => {
       const date = new Date(activity.date);
       return date >= sixMonthsAgo && date <= now;
     });
@@ -43,57 +51,59 @@ export default function Resume() {
     link.click();
   };
 
-    return(
-  <div
-    id="resume-page"
-    ref={ref}
-    className="d-flex justify-content-center align-items-center"
-    style={{ padding: "0vh 6vw", minHeight: "100svh" }}
-  >
+  return (
     <div
-      className="w-100 d-flex justify-content-center align-items-center gap-4 p-md-0"
-      style={{ position: "relative" }}
+      id="resume-page"
+      ref={ref}
+      className="d-flex justify-content-center align-items-center"
+      style={{ padding: "0vh 6vw", minHeight: "100svh" }}
     >
-      {entry?.isIntersecting && (
-        <div
-         className="w-100 d-flex justify-content-center align-items-center flex-column p-md-0"
-          style={{ gap: "2vh" }}
-        >
-          <h2 className={stylesHome.mainTitle}>Resume</h2>
-          <p>
-            Check out my resume and github, getting to know more about me and my
-            work.
-          </p>
+      <div
+        className="w-100 d-flex justify-content-center align-items-center gap-4 p-md-0"
+        style={{ position: "relative" }}
+      >
+        {entry?.isIntersecting && (
+          <div
+            className="w-100 d-flex justify-content-center align-items-center flex-column p-md-0"
+            style={{ gap: "2vh" }}
+          >
+            <h2 className={stylesHome.mainTitle}>Resume</h2>
+            <p>
+              Check out my resume and github, getting to know more about me and
+              my work.
+            </p>
 
-          <div className={stylesHome.resumeContainerMain}>
-            <Row style={{ rowGap: "5vh" }}>
-              <Col
-                xs={12}
-                md={6}
-                className={stylesHome.resumeContainerParent}
-                style={{ 
-                  minHeight: "40vh",
-                  position: "relative",
-                 }}
-              >
+            <div className={stylesHome.resumeContainerMain}>
+              <Row style={{ rowGap: "5vh" }}>
+                <Col
+                  xs={12}
+                  md={6}
+                  className={stylesHome.resumeContainerParent}
+                  style={{
+                    minHeight: "40vh",
+                    position: "relative",
+                  }}
+                >
                   <div className={stylesHome.resumeContainer}>
                     <img
                       src={resumeImage}
                       alt="Resume"
-                      // style={{
-                      //   maxWidth: "18vw",
-                      //   maxHeight: "40vh",
-                      //   borderRadius: "1rem",
-                      // }}
                     />
 
                     <button
                       className={stylesHome.downloadButton}
                       onClick={handleDownload}
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" className="bi bi-download" viewBox="0 0 16 16">
-                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="white"
+                        className="bi bi-download"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
                       </svg>
                     </button>
                   </div>
@@ -102,69 +112,66 @@ export default function Resume() {
                     className={stylesHome.folderContainer}
                     alt=""
                   />
-                  <div 
-                    className={stylesHome.folderOuterContainer}
-                  ></div>
+                  <div className={stylesHome.folderOuterContainer}></div>
                   <div
                     className={stylesHome.folderOuterContainerWhite}
                     style={{ backgroundColor: "white" }}
                   ></div>
-              </Col>
+                </Col>
 
-              {/* GitHub */}
-              <Col
-                xs={12}
-                md={6}
-                className={`text-center ${styles.fadeRight} d-flex flex-column justify-content-center align-items-center`}
-              >
-                <Link
-                  to="https://github.com/NiushaEbrahimi"
-                  style={{ textDecoration: "none" }}
+                {/* GitHub */}
+                <Col
+                  xs={12}
+                  md={6}
+                  className={`text-center ${styles.fadeRight} d-flex flex-column justify-content-center align-items-center`}
                 >
-                  <div
-                    className={styles.githubContribution}
-                    style={{ position: "relative" }}
+                  <Link
+                    to="https://github.com/NiushaEbrahimi"
+                    style={{ textDecoration: "none" }}
                   >
-                    <div className={styles.githubDecor1}></div>
-                    <div className={styles.githubDecor2}></div>
-                    <div className={styles.githubDecor3}></div>
-                    <div className={styles.githubDecor4}></div>
-                    <div className={styles.githubDecor5}></div>
-                    <div className={styles.githubDecor6}></div>
-                    <div className={styles.githubDecor7}></div>
-
-                    <div className={styles.githubLogo}>
-                      <img src={GithubLogo} alt="Github Logo" />
-                    </div>
-
                     <div
-                      style={{
-                        overflowX: "hidden",
-                        backgroundColor: "white",
-                        borderRadius: "0.7rem",
-                        padding: "1rem",
-                        cursor: "pointer",
-                      }}
+                      className={styles.githubContribution}
+                      style={{ position: "relative" }}
                     >
-                      <GitHubCalendar
-                        transformData={selectLastHalfYear}
-                        username="NiushaEbrahimi"
-                        style={{ color: "black" }}
-                        labels={{
-                          totalCount:
-                            "{{count}} contributions in the last half year",
-                        }}
-                      />
-                    </div>
-                  </div>
-                </Link>
-              </Col>
-            </Row>
-          </div>
-        </div>
-      )}
-    </div>
-  </div>
+                      <div className={styles.githubDecor1}></div>
+                      <div className={styles.githubDecor2}></div>
+                      <div className={styles.githubDecor3}></div>
+                      <div className={styles.githubDecor4}></div>
+                      <div className={styles.githubDecor5}></div>
+                      <div className={styles.githubDecor6}></div>
+                      <div className={styles.githubDecor7}></div>
 
-    )
+                      <div className={styles.githubLogo}>
+                        <img src={GithubLogo} alt="Github Logo" />
+                      </div>
+
+                      <div
+                        style={{
+                          overflowX: "hidden",
+                          backgroundColor: "white",
+                          borderRadius: "0.7rem",
+                          padding: "1rem",
+                          cursor: "pointer",
+                        }}
+                      >
+                        <GitHubCalendar
+                          transformData={selectLastHalfYear}
+                          username="NiushaEbrahimi"
+                          style={{ color: "black" }}
+                          labels={{
+                            totalCount:
+                              "{{count}} contributions in the last half year",
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </Link>
+                </Col>
+              </Row>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
