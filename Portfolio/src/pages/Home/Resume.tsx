@@ -1,17 +1,3 @@
-// src/pages/Home/Resume.tsx
-
-// 1. Declare module for github-calendar-parser (no @types available)
-declare module 'github-calendar-parser' {
-  const parse: (svg: string) => {
-    date: string;
-    count: number;
-    color: string;
-    intensity: number;
-  }[];
-  export default parse;
-}
-
-// 2. Imports
 import { useIntersectionObserver } from "@uidotdev/usehooks";
 import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
