@@ -1,0 +1,59 @@
+.circle{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    /* padding:2rem;     */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 20vh;
+    color: white;
+}
+.circle_1 ,.circle_2{
+    background-color: transparent;
+    position: absolute;
+    border-radius: 50%;
+    left: 50;
+    top: 20%;
+}
+.circle_1{
+    margin-top: 1vh;
+    width: 60%;
+    height: 50%;
+    background-color: #0b0e12;
+    z-index: 100;
+}
+.circle_1 > span > svg{
+    color: white;
+}
+
+
+.circle_2{
+    --circle-color : var(--color-8);
+    z-index:30;
+    width: 70%;
+    height: 60%;
+    background: conic-gradient(var(--circle-color) calc(var(--rotation-angle)*1%) , transparent 0% );
+    animation: rotate 2s forwards;
+}
+
+@property --rotation-angle {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0 ;
+}
+
+@property --target-angle {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0 ;
+}
+
+@keyframes rotate {
+    from {
+        --rotation-angle: 0;
+    }
+    to {
+        --rotation-angle: var(--target-angle);
+    }
+}

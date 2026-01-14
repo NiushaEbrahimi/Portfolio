@@ -1,0 +1,268 @@
+:root {
+  --green-light: #9be9a8;
+  --green-glow: #40c463;
+  --green-dark: #30a14e;
+  --green-extra-dark:#216e39;
+
+}
+
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeLeft{
+  opacity: 0;
+  transform: translateX(-10vw);
+  animation: fadeLeft 1s ease-out forwards;
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+}
+
+.fadeRight{
+  opacity: 0;
+  transform: translateX(10vw);
+  animation: fadeRight 1s ease-out forwards;
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+}
+
+.githubLogo {
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top:10%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 35px;
+  height: 35px;
+  z-index: -2;
+  transition: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+.githubContribution{
+  --my-float: 0.3;
+  border-radius: 1rem;
+  z-index: 100;
+  transition: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  max-width: 30vw;
+}
+.githubLogo > img {
+  position: absolute;
+  inset: 0;
+  width: 35px;
+  height: 35px;
+  
+}
+
+.githubContribution:hover .githubLogo{
+  scale: 1.6;
+  top: -15%;
+  right: 50%;
+  animation: jelly 2.5s ease-in-out infinite;
+}
+
+.githubContribution:hover{
+  --my-float: 0.1;
+  box-shadow: 0px 0px calc(var(--my-float)*100px) calc(var(--my-float)*100px) rgba(255, 255, 255, var(--my-float));
+  animation: shadow 2.5s forwards infinite;
+}
+
+@property --my-float {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.1;
+}
+
+@keyframes shadow {
+  0%{
+    --my-float : 0.05
+  }
+  50%{
+    --my-float : 0.15
+  }
+  100%{
+    --my-float : 0.05
+  }
+}
+
+@keyframes jelly {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes jelly1 {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+
+
+.githubDecor1 ,.githubDecor2 ,.githubDecor3, .githubDecor4, .githubDecor5 ,.githubDecor6, .githubDecor7  {
+  border-radius: 50%;
+  position: absolute;
+  translate: -50% -50%;
+  inset: 0;
+  transition: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  z-index: -2;
+}
+
+.githubDecor1{
+  width: 35px;
+  height: 35px;
+  top: 10%;
+  left: 5%;
+  background-color: var(--green-dark);
+}
+@media (max-width: 1110px)  {
+  .githubDecor1{
+    top: 10%;
+    left: 10%;
+  }
+}
+
+.githubContribution:hover .githubDecor1{
+  scale: 1.4;
+  top: -8%;
+  left: -8%;
+  animation: jelly 2.5s ease-in-out infinite;
+}
+
+.githubDecor2{
+  width: 15px;
+  height: 15px;
+  top: 90%;
+  left: 5%;
+  background-color: var(--green-glow);
+}
+
+.githubContribution:hover .githubDecor2{
+  scale: 1.4;
+  top: 110%;
+  left: -8%;
+  animation: jelly1 2.5s ease-in-out infinite;
+}
+
+.githubDecor3{
+  width: 15px;
+  height: 15px;
+  top: 10%;
+  left: 5%;
+  background-color: var(--green-light);
+}
+
+.githubContribution:hover .githubDecor3{
+  scale: 1.4;
+  top: 30%;
+  left: -18%;
+  animation: jelly 2.5s ease-in-out infinite;
+}
+
+.githubDecor4{
+  width: 15px;
+  height: 15px;
+  top: 85%;
+  left: 80%;
+  background-color: var(--green-light);
+}
+
+.githubContribution:hover .githubDecor4{
+  scale: 1.4;
+  top: 110%;
+  left: 110%;
+  animation: jelly1 2.5s ease-in-out infinite;
+}
+
+.githubDecor5{
+  width: 15px;
+  height: 15px;
+  top: 10%;
+  left: 90%;
+  background-color: var(--green-extra-dark);
+}
+
+.githubContribution:hover .githubDecor5{
+  scale: 1.4;
+  top: -10%;
+  left: 110%;
+  animation: jelly 2.5s ease-in-out infinite;
+}
+
+.githubDecor6{
+  width: 15px;
+  height: 15px;
+  top: 10%;
+  left: 10%;
+  background-color: var(--green-light);
+}
+
+.githubContribution:hover .githubDecor6{
+  scale: 1.4;
+  top: -10%;
+  right: -15%;
+  animation: jelly 2.5s ease-in-out infinite;
+}
+
+.githubDecor7{
+  width: 15px;
+  height: 15px;
+  top: 85%;
+  left: 80%;
+  background-color: var(--green-extra-dark);
+}
+
+.githubContribution:hover .githubDecor7{
+  scale: 1.4;
+  top: 120%;
+  left: 90%;
+  animation: jelly1 2.5s ease-in-out infinite;
+}
